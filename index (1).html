@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SYANA Conciergerie – L’élégance au service de vos séjours d’exception</title>
+  <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Saint-Cyr-sur-Mer, Bandol, Cassis et Toulon. Offres Standard 18% et Gold 20%." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0d0d0f;--panel:#141418;--text:#e9e9ef;--muted:#b8b8c7;--gold:#caa45a;--gold-strong:#b98c2b;--border:rgba(255,255,255,.08);--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(13,13,15,.9),rgba(13,13,15,.6),transparent);backdrop-filter:saturate(140%) blur(6px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand svg,.brand img{width:44px;height:44px;border-radius:10px;border:1px solid var(--border);box-shadow:var(--shadow);background:#0f0f12}
+    .brand .name{font-family:'Playfair Display',serif;letter-spacing:.06em;font-weight:700}
+    .brand .tag{font-size:12px;color:var(--muted);margin-top:2px}
+    .cta{background:var(--gold);color:#0b0b0d;padding:10px 16px;border-radius:999px;font-weight:600;border:1px solid var(--gold-strong);box-shadow:0 6px 18px rgba(202,164,90,.35)}
+    .hero{position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://images\.unsplash\.com/photo\-1505691938895\-1758d7feb511\?q=80\&w=1600\&auto=format\&fit=crop') center/cover no-repeat;filter:brightness(.45)}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 40%, rgba(202,164,90,.18), transparent 60%)}
+    .hero-inner{position:relative;padding:120px 0 110px;text-align:center}
+    .kicker{color:var(--gold);letter-spacing:.18em;font-size:12px;font-weight:700;text-transform:uppercase}
+    .h1{font-family:'Playfair Display',serif;font-size:46px;line-height:1.1;margin:14px 0 10px}
+    .sub{max-width:720px;color:var(--muted);font-size:16px;margin:0 auto}
+    .hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid var(--border);background:var(--panel)}
+    .btn.primary{background:var(--gold);color:#0b0b0d;border-color:var(--gold-strong);font-weight:700}
+    .section{padding:70px 0}
+    .section h2{font-family:'Playfair Display',serif;font-size:34px;margin:0 0 14px;text-align:center}
+    .grid{display:grid;gap:18px}
+    @media(min-width:800px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    .card{background:linear-gradient(180deg,#141418,#111114);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;background:rgba(202,164,90,.1);color:var(--gold);border:1px solid var(--gold-strong);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .price{font-family:'Playfair Display',serif;font-size:42px;color:var(--gold);margin:8px 0}
+    .ul{margin:14px 0 0;padding-left:18px}
+    .ul li{margin:7px 0}
+    .card.featured{border-color:var(--gold-strong);background:linear-gradient(180deg,#17171b,#121216)}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .chip{border:1px solid var(--border);padding:8px 12px;border-radius:999px;background:var(--panel);color:var(--text)}
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:#0f0f12;color:var(--text)}
+    textarea{min-height:120px;resize:vertical}
+    .footer{padding:40px 0;color:#9a9ab0;border-top:1px solid var(--border)}
+    /* Responsive */ 
+    @media (max-width: 900px){
+      .container{padding:0 18px}
+      .hero-inner{padding:96px 0 90px}
+      .h1{font-size:38px}
+    }
+    @media (max-width: 640px){
+      .nav{flex-wrap:wrap;gap:12px}
+      .brand svg,.brand img{width:36px;height:36px}
+      nav a{font-size:14px}
+      .cta{padding:8px 12px}
+      .hero-inner{padding:84px 0 72px}
+      .kicker{font-size:11px;letter-spacing:.14em}
+      .h1{font-size:30px}
+      .sub{font-size:15px}
+      .section{padding:48px 0}
+      .section h2{font-size:26px}
+      .card{padding:16px}
+      .btn{padding:10px 14px;border-radius:10px}
+      .price{font-size:34px}
+      .chips{gap:8px}
+      .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+    }
+  </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f0f12'/%3E%3Cpath d='M5,65 Q35,40 65,55 T95,48' fill='none' stroke='%23caa45a' stroke-width='6'/%3E%3Ctext x='50' y='45' text-anchor='middle' fill='%23caa45a' font-size='38' font-family='Playfair Display, serif'%3ESYANA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="0" y="0" width="100" height="100" fill="#0f0f12"/>
+          <path d="M5,65 Q35,40 65,55 T95,48" fill="none" stroke="#caa45a" stroke-width="4" />
+          <text x="50" y="35" text-anchor="middle" fill="#caa45a" font-size="18" font-family="'Playfair Display', serif">SYANA</text>
+        </svg>
+        <div>
+          <div class="name">SYANA</div>
+          <div class="tag">Conciergerie</div>
+        </div>
+      </a>
+      <nav style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <a href="#services">Services</a>
+        <a href="#offres">Offres</a>
+        <a href="#zones">Zones</a>
+        <a href="#avis">Avis</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#faq">FAQ</a>
+        <a href="tel:+33650992263" class="cta" style="background:transparent;border-color:var(--border);color:var(--text)">06 50 99 22 63</a>
+        <a href="mailto:syanaconciergerie@gmail.com" class="cta">syanaconciergerie@gmail.com</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="kicker">Conciergerie haut de gamme</div>
+      <h1 class="h1">SYANA Conciergerie – L’élégance au service de vos séjours d’exception sur la Côte d’Azur</h1>
+      <p class="sub">Basés à La Ciotat, nous accompagnons les propriétaires avec un service transparent, fiable et raffiné. 5 ans d’expérience, une gestion soignée, et des séjours mémorables pour vos hôtes.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">Demander un accompagnement</a>
+        <a class="btn" href="#offres">Découvrir nos offres (18% / 20%)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Nos services</h2>
+      <p class="muted" style="margin-top:8px">Une approche clé en main pensée pour rassurer les propriétaires et sublimer l’expérience des voyageurs.</p>
+      <div class="grid cols-3" style="margin-top:18px">
+        <div class="card">
+          <span class="pill">Séjours d’exception</span>
+          <h3>Accueil & expérience</h3>
+          <p class="muted">Check-in soigné, guide d’accueil, recommandations locales triées sur le volet (plages, restaurants, balades). Disponibilité et réactivité pour des avis 5★.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Mise en valeur</span>
+          <h3>Photos & annonces</h3>
+          <p class="muted">Création d’annonce, shooting photo, optimisation des titres & descriptions, gestion du calendrier et tarification.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Clé en main</span>
+          <h3>Gestion opérationnelle</h3>
+          <p class="muted">Ménage professionnel, état des lieux, petites maintenances, gestion du linge/consommables selon l’offre choisie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offres" class="section">
+    <div class="container">
+      <h2>Nos offres simples et transparentes</h2>
+      <p class="muted" style="margin-top:8px">Choisissez la formule la plus adaptée à votre organisation.</p>
+      <div class="grid cols-2" style="margin-top:18px">
+        <div class="card">
+          <h3>Standard</h3>
+          <div class="price">18%<p class="muted" style="margin-top:6px">Linge et consommables fournis par le propriétaire.</p></div>
+          <p class="muted">Idéal si vous préférez fournir vous‑même le linge et les consommables.</p>
+          <ul class="ul muted">
+            <li>Création et optimisation d’annonce</li>
+            <li>Accueil voyageurs & assistance</li>
+            <li>Ménage professionnel (hors linge/consommables)</li>
+            <li>Gestion calendrier & tarification</li>
+          </ul>
+          <a class="btn" style="margin-top:18px" href="#contact">Je suis intéressé</a>
+        </div>
+        <div class="card featured">
+          <h3>Gold</h3>
+          <div class="price">20%</div>
+          <p class="muted">La tranquillité totale : la conciergerie fournit le linge et les consommables.</p>
+          <ul class="ul muted">
+            <li>Tout ce de l’offre Standard</li>
+            <li>Fourniture & rotation du linge</li>
+            <li>Consommables inclus (papier, savons, etc.)</li>
+            <li>Contrôles qualité renforcés</li>
+          </ul>
+          <a class="btn primary" style="margin-top:18px" href="#contact">Passer en Gold</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zones" class="section">
+    <div class="container">
+      <h2>Implantation locale</h2>
+      <p class="muted" style="margin-top:8px">Basés à <strong>La Ciotat</strong>, nous intervenons également à <strong>Saint‑Cyr‑sur‑Mer</strong>, <strong>Bandol</strong>, <strong>Cassis</strong> et <strong>Toulon</strong>.</p>
+      <div class="chips" style="margin-top:18px">
+        <span class="chip">La Ciotat</span>
+        <span class="chip">Saint‑Cyr‑sur‑Mer</span>
+        <span class="chip">Bandol</span>
+        <span class="chip">Cassis</span>
+        <span class="chip">Toulon</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="avis" class="section">
+    <div class="container">
+      <h2>Avis clients</h2>
+      <div class="grid cols-3" style="margin-top:18px">
+        <div class="card">
+          <h3 style="margin-bottom:26px">★★★★★</h3>
+          <p class="muted">« Service impeccable, nous avons eu que des retours positifs de nos voyageurs ! »</p>
+          <p style="margin-top:8px;opacity:.85"><strong>Claire, La Ciotat</strong></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:26px">★★★★★</h3>
+          <p class="muted">« Transparent et efficace, je recommande fortement SYANA Conciergerie. »</p>
+          <p style="margin-top:8px;opacity:.85"><strong>Marc, Cassis</strong></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:26px">★★★★★</h3>
+          <p class="muted">« Enfin un partenaire de confiance pour gérer ma location à distance ! »</p>
+          <p style="margin-top:8px;opacity:.85"><strong>Sophie, Bandol</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" class="section">
+    <div class="container">
+      <h2>Galerie</h2>
+      <p class="muted" style="margin-top:8px">Ambiance simple et classe, à l’image de SYANA Conciergerie.</p>
+      <div class="grid cols-3" style="margin-top:18px">
+        <img class="card" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800&auto=format&fit=crop" alt="Appartement décoré" loading="lazy">
+        <img class="card" src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2b8f?q=80&w=800&auto=format&fit=crop" alt="Vue mer" loading="lazy">
+        <img class="card" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop" alt="Accueil voyageurs" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <h2>FAQ</h2>
+      <div class="grid cols-2" style="margin-top:18px">
+        <div class="card">
+          <h3>Comment fonctionne la formule à 18% ?</h3>
+          <p class="muted">Vous fournissez le linge et les consommables. Nous nous occupons du reste : annonces, accueil, ménage, gestion.</p>
+        </div>
+        <div class="card">
+          <h3>Et la formule Gold à 20% ?</h3>
+          <p class="muted">Nous gérons absolument tout, y compris la fourniture du linge et des consommables, pour votre tranquillité.</p>
+        </div>
+        <div class="card">
+          <h3>Puis‑je arrêter à tout moment ?</h3>
+          <p class="muted">Oui. Notre objectif est de bâtir la confiance sur la durée.</p>
+        </div>
+        <div class="card">
+          <h3>Quels secteurs sont couverts ?</h3>
+          <p class="muted">La Ciotat, Saint‑Cyr‑sur‑Mer, Bandol, Cassis et Toulon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact & inscription propriétaire</h2>
+      <p class="muted" style="margin-top:8px">Décrivez votre bien et vos attentes : nous revenons vers vous rapidement.</p>
+      <div class="grid cols-2" style="margin-top:18px">
+        <form class="card" onsubmit="event.preventDefault(); document.getElementById('feedback').style.display='block'">
+          <input type="text" id="nom" placeholder="Nom & prénom" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="tel" id="tel" placeholder="Téléphone" required>
+          <textarea id="message" placeholder="Votre bien (type, adresse, capacités) & vos besoins"></textarea>
+          <button class="btn primary" type="submit">Envoyer ma demande</button>
+          <p class="muted" id="feedback" style="display:none;margin-top:8px">Merci ! Votre demande a bien été envoyée. Nous la prenons en compte et vous recontactons très vite.</p>
+        </form>
+        <div class="card">
+          <h3>Coordonnées</h3>
+          <p class="muted">
+            Téléphone : <a href="tel:+33650992263">06 50 99 22 63</a><br>
+            Email : <a href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a><br>
+            Domaine : syana-bc.fr<br>
+            Secteur : La Ciotat & alentours
+          </p>
+          <h3 style="margin-top:8px">Message automatique (proposé)</h3>
+          <p class="muted" style="font-size:14px;line-height:1.6">
+            Objet : <em>SYANA Conciergerie – Confirmation de votre demande</em><br>
+            Bonjour,<br>
+            Merci pour votre inscription. Nous avons bien reçu votre demande et la prenons en compte. Un membre de l’équipe SYANA Conciergerie vous contactera sous peu pour échanger sur votre bien et vous proposer un accompagnement adapté.<br>
+            Belle journée,<br>
+            SYANA Conciergerie
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:10px">
+        <svg viewBox="0 0 100 100" aria-hidden="true" style="width:26px;height:26px;border-radius:6px;border:1px solid var(--border)">
+          <rect x="0" y="0" width="100" height="100" fill="#0f0f12"/>
+          <path d="M5,65 Q35,40 65,55 T95,48" fill="none" stroke="#caa45a" stroke-width="4" />
+        </svg>
+        <span style="color:#ccc">© <span id="year"></span> SYANA Conciergerie</span>
+      </div>
+      <div style="display:flex;gap:16px">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
