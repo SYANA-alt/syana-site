@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
+  <style>
+/* Hotfix : enlève le voile noir sur les cartes tarifs */
+.card::before { background: none !important; opacity: 0 !important; }
+/* S'assure que l'image n'est pas assombrie */
+.card img { filter: none !important; opacity: 1 !important; }
+</style>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SYANA Conciergeri- L’élégance au service de vos séjours d’exception</title>
