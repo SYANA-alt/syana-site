@@ -20,7 +20,7 @@
       --bg:#0a0b0d;            /* fond principal noir */
       --bg-soft:#121317;       /* cartes / surfaces */
       --ring:rgba(255,255,255,.08);
-      --radius:18px; 
+      --radius:18px;
       --shadow:0 10px 30px rgba(2,6,23,.35);
     }
     *{box-sizing:border-box}
@@ -31,25 +31,20 @@
     }
     img{max-width:100%;display:block}
 
-    /* Neutralise tout voile sombre d’anciens styles */
-    .card:before,.card:after,.gallery:before,.gallery:after{content:none!important}
-    .card img{filter:none!important;mix-blend-mode:normal!important;opacity:1!important}
-
     .container{width:min(1120px,92%);margin-inline:auto}
-    h1{font:700 clamp(28px,5vw,48px)/1.12 "Playfair Display",serif;margin:.35em 0 .3em;color:#fff}
+    h1{font:700 clamp(28px,5vw,48px)/1.12 "Playfair Display",serif;margin:.35em 0 .3em;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.45)}
     h2{font:700 28px "Playfair Display",serif;margin:0 0 14px;color:#fff}
     .section{padding:56px 0}
     .muted{color:var(--muted)}
-    .badge{display:inline-block;padding:6px 10px;background:var(--bg);border-radius:999px;border:1px solid var(--ring);font-weight:600;color:var(--ink)}
 
     /* Header/Nav */
     header{position:sticky;top:0;z-index:50;background:rgba(10,11,13,.75);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--ring)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-    .brand img{height:56px;width:auto}
-    .brand .word{display:flex;flex-direction:column}
-    .brand .word strong{font:700 22px/1 "Playfair Display",serif;letter-spacing:.3px;color:#fff}
-    .brand .word span{font:500 12px/1.1 Inter,system-ui;color:var(--muted)}
+    .brand img{height:56px;width:auto;display:block}
+    /* on supprime tout texte sous/à côté du logo */
+    .brand .word{display:none !important}
+
     .menu{display:flex;align-items:center;gap:20px}
     .menu a{text-decoration:none;color:var(--ink);font-weight:500;padding:8px 10px;border-radius:10px}
     .menu a:hover{background:var(--bg-soft)}
@@ -76,25 +71,20 @@
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
     @media (max-width:920px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
     .card{border:1px solid var(--ring);border-radius:var(--radius);background:var(--bg-soft);padding:18px;box-shadow:var(--shadow);color:var(--ink)}
+    .badge{display:inline-block;padding:6px 10px;background:var(--bg);border-radius:999px;border:1px solid var(--ring);font-weight:600;color:var(--ink)}
     .price{font:700 28px/1 "Playfair Display",serif;color:#fff}
 
-    /* Hero (avec image principale en fond) */
+    /* ================= HERO (grande photo tout en haut) ================= */
     .hero{
       position:relative;
-      padding:56px 0 28px;
-      color:#fff;
-      background:#0a0b0d;
-      overflow:hidden;
+      min-height:62vh;         /* grande bannière */
+      display:flex;align-items:center;
+      color:#fff; overflow:hidden;
     }
-    .hero::before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.35)),
-        url("https://images.unsplash.com/photo-1526481280698-8fcc13fd5f1d?auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
-      /* ↑ Calanques. Si tu préfères l’ancienne, dis-moi et je remets son URL exacte. */
-      z-index:0;
-    }
+    .hero-media{position:absolute;inset:0;z-index:0}
+    .hero-media img{width:100%;height:100%;object-fit:cover}
+    .hero-media::after{content:"";position:absolute;inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.30))}
     .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
     @media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
     .eyebrow{color:#d1d5db;letter-spacing:.18em;text-transform:uppercase;font-weight:600;font-size:12px}
@@ -107,7 +97,7 @@
     @media (max-width:920px){.gallery{grid-template-columns:1fr}.gallery img{height:220px}}
 
     /* Avis (étoiles) */
-    .stars{color:var(--gold);font-size:20px;letter-spacing:2px} /* toujours jaune sur noir */
+    .stars{color:var(--gold);font-size:20px;letter-spacing:2px} /* toujours jaune */
     .quote{margin:.5em 0 0;color:#cbd5e1}
 
     /* Contact/Footer */
@@ -122,7 +112,7 @@
     <div class="container nav" role="navigation" aria-label="Navigation principale">
       <a class="brand" href="#top" aria-label="Accueil">
         <img src="/assets/images/logo/syana-logo.png" alt="Logo SYANA Conciergerie" width="220" height="auto" loading="eager" decoding="async" />
-        <span class="word"><strong>SYANA</strong><span>Conciergerie</span></span>
+        <!-- texte sous le logo supprimé -->
       </a>
 
       <nav class="menu" aria-label="Liens">
@@ -153,8 +143,14 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO (grande photo + contenu) -->
   <section class="hero" id="top">
+    <!-- Photo tout en haut (Calanques). Dis-moi si tu veux l’ancienne : je remets son URL exacte. -->
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1526481280698-8fcc13fd5f1d?auto=format&fit=crop&w=1950&q=80"
+           alt="Calanques — Côte d’Azur">
+    </div>
+
     <div class="container wrap">
       <div>
         <div class="eyebrow">Conciergerie haut de gamme</div>
@@ -201,7 +197,7 @@
   <section class="section" id="offres" style="background:var(--bg-soft)">
     <div class="container">
       <h2>Nos offres simples et transparentes</h2>
-      <div class="grid cols-2" style="margin-top:12px">
+    <div class="grid cols-2" style="margin-top:12px">
         <div class="card">
           <h3 style="color:#fff">Standard</h3>
           <p class="price">18%</p>
@@ -258,7 +254,7 @@
     </div>
   </section>
 
-  <!-- AVIS -->
+  <!-- AVIS (étoiles jaunes) -->
   <section class="section" id="avis" style="background:var(--bg-soft)">
     <div class="container">
       <h2>Avis</h2>
@@ -330,6 +326,7 @@
   </script>
 </body>
 </html>
+
 
 
 
