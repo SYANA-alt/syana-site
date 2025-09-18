@@ -19,9 +19,11 @@
       --gold:#facc15;          /* étoiles */
       --bg:#0a0b0d;            /* fond principal noir */
       --bg-soft:#121317;       /* cartes / surfaces */
-      --ring:rgba(255,255,255,.08);
+      --ring:rgba(255,255,255,.10);
+      --ring-soft:rgba(255,255,255,.06);
       --radius:18px;
       --shadow:0 10px 30px rgba(2,6,23,.35);
+      --container:1120px;
     }
     *{box-sizing:border-box}
     html,body{margin:0}
@@ -31,19 +33,19 @@
     }
     img{max-width:100%;display:block}
 
-    .container{width:min(1120px,92%);margin-inline:auto}
+    .container{width:min(var(--container),92%);margin-inline:auto}
     h1{font:700 clamp(28px,5vw,48px)/1.12 "Playfair Display",serif;margin:.35em 0 .3em;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.45)}
     h2{font:700 28px "Playfair Display",serif;margin:0 0 14px;color:#fff}
     .section{padding:56px 0}
     .muted{color:var(--muted)}
 
     /* Header/Nav */
-    header{position:sticky;top:0;z-index:50;background:rgba(10,11,13,.75);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--ring)}
+    header{position:sticky;top:0;z-index:50;background:rgba(10,11,13,.75);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--ring-soft)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
     .brand img{height:56px;width:auto;display:block}
-    /* on supprime tout texte sous/à côté du logo */
-    .brand .word{display:none !important}
+    /* aucun texte à côté/sous le logo */
+    .brand .word{display:none!important}
 
     .menu{display:flex;align-items:center;gap:20px}
     .menu a{text-decoration:none;color:var(--ink);font-weight:500;padding:8px 10px;border-radius:10px}
@@ -51,7 +53,7 @@
     .cta{background:var(--ink);color:#0b0b0d;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:var(--shadow)}
     .cta:hover{filter:brightness(1.05)}
 
-    .burger{display:none;width:44px;height:44px;border:1px solid var(--ring);border-radius:12px;background:#0f1216;align-items:center;justify-content:center;color:#fff}
+    .burger{display:none;width:44px;height:44px;border:1px solid var(--ring-soft);border-radius:12px;background:#0f1216;align-items:center;justify-content:center;color:#fff}
     .burger span{width:20px;height:2px;background:#fff;position:relative;display:block}
     .burger span:before,.burger span:after{content:"";position:absolute;left:0;right:0;height:2px;background:#fff}
     .burger span:before{top:-6px}.burger span:after{top:6px}
@@ -59,7 +61,7 @@
     .drawer{display:none}
     .drawer.open{display:block}
     @media (max-width:920px){
-      .drawer{position:fixed;inset:64px 0 auto 0;background:#0c0e12;border-top:1px solid var(--ring)}
+      .drawer{position:fixed;inset:64px 0 auto 0;background:#0c0e12;border-top:1px solid var(--ring-soft)}
       .drawer .menu{display:flex;flex-direction:column;padding:12px 16px;gap:6px}
       .drawer .menu a{padding:12px 10px}
       .drawer .cta{display:inline-block;margin:8px 10px 16px}
@@ -70,21 +72,17 @@
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
     @media (max-width:920px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
-    .card{border:1px solid var(--ring);border-radius:var(--radius);background:var(--bg-soft);padding:18px;box-shadow:var(--shadow);color:var(--ink)}
-    .badge{display:inline-block;padding:6px 10px;background:var(--bg);border-radius:999px;border:1px solid var(--ring);font-weight:600;color:var(--ink)}
+    .card{border:1px solid var(--ring-soft);border-radius:var(--radius);background:var(--bg-soft);padding:18px;box-shadow:var(--shadow);color:var(--ink)}
+    .badge{display:inline-block;padding:6px 10px;background:var(--bg);border-radius:999px;border:1px solid var(--ring-soft);font-weight:600;color:var(--ink)}
     .price{font:700 28px/1 "Playfair Display",serif;color:#fff}
 
-    /* ================= HERO (grande photo tout en haut) ================= */
+    /* =============== HERO (grande photo) =============== */
     .hero{
-      position:relative;
-      min-height:62vh;         /* grande bannière */
-      display:flex;align-items:center;
-      color:#fff; overflow:hidden;
+      position:relative;min-height:62vh;display:flex;align-items:center;color:#fff;overflow:hidden
     }
     .hero-media{position:absolute;inset:0;z-index:0}
     .hero-media img{width:100%;height:100%;object-fit:cover}
-    .hero-media::after{content:"";position:absolute;inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.30))}
+    .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.30))}
     .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
     @media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
     .eyebrow{color:#d1d5db;letter-spacing:.18em;text-transform:uppercase;font-weight:600;font-size:12px}
@@ -93,16 +91,35 @@
 
     /* Galerie */
     .gallery{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-    .gallery img{width:100%;height:260px;object-fit:cover;border-radius:14px;border:1px solid var(--ring)}
+    .gallery img{width:100%;height:260px;object-fit:cover;border-radius:14px;border:1px solid var(--ring-soft)}
     @media (max-width:920px){.gallery{grid-template-columns:1fr}.gallery img{height:220px}}
 
-    /* Avis (étoiles) */
+    /* Avis (étoiles + nom) */
     .stars{color:var(--gold);font-size:20px;letter-spacing:2px} /* toujours jaune */
     .quote{margin:.5em 0 0;color:#cbd5e1}
+    .reviewer{margin-top:8px;font-weight:600;color:#e5e7eb}
+    .reviewer .meta{display:block;font-weight:500;color:var(--muted);font-size:13px;margin-top:2px}
+
+    /* Formulaires */
+    form{display:grid;gap:12px}
+    .field{display:grid;gap:6px}
+    label{font-weight:600}
+    input,select,textarea{
+      background:#0f1216;color:#e8edf5;border:1px solid var(--ring-soft);
+      border-radius:12px;padding:12px 14px;outline:none
+    }
+    input::placeholder,textarea::placeholder{color:#9299a6}
+    textarea{min-height:120px;resize:vertical}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid var(--ring-soft);padding:12px 16px;border-radius:12px;background:#e5e7eb;color:#0b0b0d;cursor:pointer;font-weight:700
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .note{font-size:12px;color:#9aa3b2}
 
     /* Contact/Footer */
-    .contact{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    footer{padding:28px 0;border-top:1px solid var(--ring);color:var(--muted);font-size:14px}
+    .contact-cta{display:flex;gap:12px;flex-wrap:wrap}
+    footer{padding:28px 0;border-top:1px solid var(--ring-soft);color:var(--muted);font-size:14px}
   </style>
 </head>
 <body>
@@ -112,7 +129,7 @@
     <div class="container nav" role="navigation" aria-label="Navigation principale">
       <a class="brand" href="#top" aria-label="Accueil">
         <img src="/assets/images/logo/syana-logo.png" alt="Logo SYANA Conciergerie" width="220" height="auto" loading="eager" decoding="async" />
-        <!-- texte sous le logo supprimé -->
+        <!-- Aucun texte sous le logo -->
       </a>
 
       <nav class="menu" aria-label="Liens">
@@ -122,6 +139,7 @@
         <a href="#galerie">Galerie</a>
         <a href="#avis">Avis</a>
         <a href="#destinations">Destinations</a>
+        <a href="#inscription">Inscription</a>
         <a href="#faq">FAQ</a>
         <a class="cta" href="#contact">Contact</a>
       </nav>
@@ -137,18 +155,21 @@
         <a href="#galerie">Galerie</a>
         <a href="#avis">Avis</a>
         <a href="#destinations">Destinations</a>
+        <a href="#inscription">Inscription</a>
         <a href="#faq">FAQ</a>
         <a class="cta" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO (grande photo + contenu) -->
+  <!-- HERO (grande photo) -->
   <section class="hero" id="top">
-    <!-- Photo tout en haut (Calanques). Dis-moi si tu veux l’ancienne : je remets son URL exacte. -->
     <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1526481280698-8fcc13fd5f1d?auto=format&fit=crop&w=1950&q=80"
-           alt="Calanques — Côte d’Azur">
+      <!-- HÉRO : chambre élégante + secours automatique -->
+      <img
+        src="https://images.unsplash.com/photo-1600607687920-4ce1b2153a1f?auto=format&fit=crop&w=1950&q=80"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1950&q=80';"
+        alt="Chambre élégante — SYANA Conciergerie" loading="eager" decoding="async">
     </div>
 
     <div class="container wrap">
@@ -197,7 +218,7 @@
   <section class="section" id="offres" style="background:var(--bg-soft)">
     <div class="container">
       <h2>Nos offres simples et transparentes</h2>
-    <div class="grid cols-2" style="margin-top:12px">
+      <div class="grid cols-2" style="margin-top:12px">
         <div class="card">
           <h3 style="color:#fff">Standard</h3>
           <p class="price">18%</p>
@@ -244,7 +265,7 @@
       <h2>Galerie</h2>
       <div class="gallery" style="margin-top:12px">
         <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async" />
-        <!-- Milieu : même image qu’avant, mais avec secours auto si l’URL tombe -->
+        <!-- Milieu : même image qu’avant, avec secours auto si l’URL tombe -->
         <img
           src="https://images.unsplash.com/photo-1600607687920-4ce1b2153a1f?auto=format&fit=crop&w=1600&q=80"
           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&auto=format&fit=crop&q=80';"
@@ -254,7 +275,7 @@
     </div>
   </section>
 
-  <!-- AVIS (étoiles jaunes) -->
+  <!-- AVIS (étoiles jaunes + noms) -->
   <section class="section" id="avis" style="background:var(--bg-soft)">
     <div class="container">
       <h2>Avis</h2>
@@ -262,14 +283,17 @@
         <div class="card">
           <div class="stars" aria-label="Note 5 sur 5">★★★★★</div>
           <p class="quote">“Accueil parfait et communication fluide. Appartement impeccable !”</p>
+          <div class="reviewer">Camille D.<span class="meta">Propriétaire — La Ciotat</span></div>
         </div>
         <div class="card">
           <div class="stars" aria-label="Note 5 sur 5">★★★★★</div>
           <p class="quote">“Propreté irréprochable, conseils locaux au top. Nous reviendrons.”</p>
+          <div class="reviewer">Jérôme B.<span class="meta">Voyageur — Cassis</span></div>
         </div>
         <div class="card">
           <div class="stars" aria-label="Note 5 sur 5">★★★★★</div>
           <p class="quote">“Gestion très pro, invités ravis et calendrier optimisé.”</p>
+          <div class="reviewer">Nadia K.<span class="meta">Propriétaire — Saint-Cyr-sur-Mer</span></div>
         </div>
       </div>
     </div>
@@ -287,21 +311,81 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section" id="faq">
+  <!-- INSCRIPTION -->
+  <section class="section" id="inscription" style="background:var(--bg-soft)">
     <div class="container">
-      <h2>FAQ</h2>
-      <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p>Vous fournissez le logement ; nous assurons l’opérationnel et la relation voyageurs, avec transparence et <strong>contrat de confiance</strong>.</p></details>
-      <details><summary>Proposez-vous des partenaires ?</summary><p>Oui : <strong>VTC</strong>, <strong>entretien piscine & jardin</strong>, et <strong>guide touristique</strong> (carnet d’adresses & idées d’activités).</p></details>
-      <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p>Bien sûr : nous vous <strong>rappelons sous 24h</strong>.</p></details>
+      <h2>Inscription</h2>
+      <p class="muted" style="margin-bottom:12px">Inscrivez-vous pour être recontacté(e) et recevoir nos infos utiles (zéro spam).</p>
+      <div class="card">
+        <form id="signupForm">
+          <div class="grid cols-2">
+            <div class="field">
+              <label for="prenom">Prénom *</label>
+              <input id="prenom" name="prenom" type="text" placeholder="Votre prénom" required />
+            </div>
+            <div class="field">
+              <label for="nom">Nom *</label>
+              <input id="nom" name="nom" type="text" placeholder="Votre nom" required />
+            </div>
+          </div>
+
+          <div class="grid cols-2">
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" placeholder="vous@exemple.com" required />
+            </div>
+            <div class="field">
+              <label for="tel">Téléphone</label>
+              <input id="tel" name="tel" type="tel" placeholder="06 12 34 56 78" />
+            </div>
+          </div>
+
+          <div class="grid cols-2">
+            <div class="field">
+              <label for="type">Je suis *</label>
+              <select id="type" name="type" required>
+                <option value="">— Choisir —</option>
+                <option>Propriétaire</option>
+                <option>Voyageur</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ville">Ville</label>
+              <input id="ville" name="ville" type="text" placeholder="La Ciotat, Cassis…" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Parlez-nous de votre bien ou de votre projet…"></textarea>
+          </div>
+
+          <div class="field">
+            <label style="display:flex;align-items:center;gap:10px">
+              <input type="checkbox" id="rgpd" required />
+              <span>J’accepte d’être contacté(e) par SYANA (RGPD).</span>
+            </label>
+            <div class="note">Vos données ne sont jamais revendues. Vous pouvez demander la suppression à tout moment.</div>
+          </div>
+
+          <button class="btn" type="submit">S’inscrire</button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact" style="background:var(--bg-soft)">
-    <div class="container contact">
-      <a class="cta" href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>
-      <a class="cta" href="tel:+33650992263">06 50 99 22 63</a>
+  <!-- CONTACT (lisible) -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="muted">Dites-nous en plus sur votre bien et vos objectifs.</p>
+      <div class="card" style="margin-top:14px">
+        <div class="contact-cta">
+          <a class="btn" href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>
+          <a class="btn" href="tel:+33650992263">06 50 99 22 63</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -321,11 +405,39 @@
     const drawer=document.getElementById('drawer');
     const openDrawer=()=>{drawer.hidden=false;drawer.classList.add('open');burger.setAttribute('aria-expanded','true');}
     const closeDrawer=()=>{drawer.classList.remove('open');drawer.hidden=true;burger.setAttribute('aria-expanded','false');}
-    burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());
-    drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});
+    if(burger){burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());}
+    if(drawer){drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});}
+
+    // Formulaire d'inscription → ouvre un email prérempli (pas de serveur nécessaire)
+    const f=document.getElementById('signupForm');
+    if(f){
+      f.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const v = id => (document.getElementById(id)?.value || '').trim();
+        if(!document.getElementById('rgpd').checked){ alert("Merci d'accepter la case RGPD."); return; }
+        const lignes = [
+          "Nouvelle inscription depuis le site SYANA:",
+          "",
+          "Prénom: " + v('prenom'),
+          "Nom: " + v('nom'),
+          "Email: " + v('email'),
+          "Téléphone: " + v('tel'),
+          "Type: " + v('type'),
+          "Ville: " + v('ville'),
+          "",
+          "Message:",
+          v('message')
+        ].join("%0D%0A");
+        const mailto = "mailto:syanaconciergerie@gmail.com"
+          + "?subject=" + encodeURIComponent("Inscription / Contact via syana-bc.fr")
+          + "&body=" + lignes;
+        window.location.href = mailto;
+      });
+    }
   </script>
 </body>
 </html>
+
 
 
 
