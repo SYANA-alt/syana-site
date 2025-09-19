@@ -108,7 +108,29 @@
 
     footer{padding:28px 0;border-top:1px solid var(--ring);color:var(--ink-dim);font-size:14px}
   </style>
-</head>
+</head><script>
+/* Fallbacks automatiques pour le logo si un chemin ne répond pas */
+(function () {
+  const el = document.getElementById('logo');
+  if (!el) return;
+  const candidates = [
+    'assets/images/logo/syana-logo.png',
+    '/assets/images/logo/syana-logo.png',
+    'assets/images/logo/syana-logo-220x56.png',
+    '/assets/images/logo/syana-logo-220x56.png'
+  ];
+  let i = 0;
+  el.addEventListener('error', function handle() {
+    if (i < candidates.length) {
+      el.src = candidates[i++];
+    } else {
+      el.removeEventListener('error', handle);
+    }
+  });
+})();
+</script>
+
+
 <body>
 
   <!-- HEADER -->
@@ -239,16 +261,15 @@
   </section>
 
   <!-- GALERIE -->
-  <section class="section" id="galerie">
-    <div class="container">
-      <h2>Galerie</h2>
-      <div class="gallery" style="margin-top:12px">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1600607687920-4ce1b2153a1f?auto=format&fit=crop&w=1600&q=80" alt="Suite élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80" alt="Terrasse ensoleillée – SYANA Conciergerie" loading="lazy" decoding="async" />
-      </div>
-    </div>
-  </section>
+  <div class="gallery" style="margin-top:12px">
+  <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80"
+       alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async" />
+  <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80"
+       alt="Suite élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
+  <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80"
+       alt="Terrasse ensoleillée – SYANA Conciergerie" loading="lazy" decoding="async" />
+</div>
+
 
   <!-- AVIS -->
   <section class="section" id="avis">
