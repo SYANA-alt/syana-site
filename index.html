@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SYANA Conciergerie – Côte d’Azur</title>
-  <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Cassis, Saint-Cyr-sur-Mer et Toulon : 24/7, check-in/out, réapprovisionnement, e-réputation, partenaires VTC, piscine & jardin, guide touristique, rappel sous 24h." />
+  <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Cassis, Saint-Cyr-sur-Mer et Toulon : 24/7, check-in/out, réapprovisionnement, suivi des évaluations, partenaires VTC, piscine & jardin, guide touristique, rappel sous 24h." />
 
   <!-- Polices -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,29 +12,14 @@
 
   <style>
     :root{
-      /* palette sombre */
-      --ink:#f5f7fa;          /* texte principal (clair) */
-      --ink-dim:#a3bac7;      /* texte secondaire */
-      --gold:#ffc451;         /* étoiles / accents clairs */
-      --bg:#0b0d14;           /* fond principal noir bleuté */
-      --card:#111827;         /* cartes / surfaces */
-      --ring:rgba(255,255,255,.06);
-      --shadow:0 18px 38px rgba(2,6,23,.35);
-      --radius:18px;
-      --container:1120px;
+      --ink:#f5f7fa; --ink-dim:#a3bac7; --gold:#ffc451;
+      --bg:#0b0d14; --card:#111827; --ring:rgba(255,255,255,.06);
+      --shadow:0 18px 38px rgba(2,6,23,.35); --radius:18px; --container:1120px;
     }
-
     *{box-sizing:border-box}
     html,body{margin:0}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.6;
-    }
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
     img{max-width:100%;display:block}
-
-    /* container */
     .container{width:min(var(--container),92%);margin-inline:auto}
 
     /* Header / Nav */
@@ -69,7 +54,6 @@
     @media (max-width:920px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
     .card{border:1px solid var(--ring);border-radius:var(--radius);background:var(--card);padding:18px;box-shadow:var(--shadow)}
     .badge{display:inline-block;padding:6px 10px;background:rgba(255,255,255,.06);border:1px solid var(--ring);border-radius:999px;font-weight:600;color:var(--ink-dim)}
-
     h1{font:700 clamp(28px,5vw,48px)/1.12 "Playfair Display",serif;margin:.35em 0 .3em}
     h2{font:700 28px "Playfair Display",serif;margin:0 0 14px}
     .muted{color:var(--ink-dim)}
@@ -100,49 +84,23 @@
     @media (max-width:920px){.contact{grid-template-columns:1fr}}
     input,textarea{
       width:100%;color:var(--ink);background:#0f172a;border:1px solid var(--ring);
-      border-radius:12px;padding:12px 14px;font:inherit;
+      border-radius:12px;padding:12px 14px;font:inherit
     }
     textarea{min-height:120px;resize:vertical}
     .btn{background:#1f2937;color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:600;cursor:pointer}
     .btn:hover{filter:brightness(1.05)}
-
     footer{padding:28px 0;border-top:1px solid var(--ring);color:var(--ink-dim);font-size:14px}
   </style>
-</head><script>
-/* Fallbacks automatiques pour le logo si un chemin ne répond pas */
-(function () {
-  const el = document.getElementById('logo');
-  if (!el) return;
-  const candidates = [
-    'assets/images/logo/syana-logo.png',
-    '/assets/images/logo/syana-logo.png',
-    'assets/images/logo/syana-logo-220x56.png',
-    '/assets/images/logo/syana-logo-220x56.png'
-  ];
-  let i = 0;
-  el.addEventListener('error', function handle() {
-    if (i < candidates.length) {
-      el.src = candidates[i++];
-    } else {
-      el.removeEventListener('error', handle);
-    }
-  });
-})();
-</script>
-
-
+</head>
 <body>
 
   <!-- HEADER -->
-  <header> 
-      <aclass="brand" href="#top" aria-label="Accueil">
-  <img id="logo"
-       src="assets/images/logo/syana-logo.png"
-       alt="Logo SYANA Conciergerie"
-       width="220" height="auto"
-       loading="eager" decoding="async">
-</a>
-
+  <header>
+    <div class="container nav" role="navigation" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Accueil">
+        <!-- LOGO (chemin stable). Assure-toi que le fichier existe à assets/images/logo/syana-logo.png -->
+        <img src="/assets/images/logo/syana-logo.png" alt="Logo SYANA Conciergerie" width="220" height="auto" loading="eager" decoding="async" />
+      </a>
 
       <nav class="menu" aria-label="Liens">
         <a href="#services">Services</a>
@@ -215,7 +173,7 @@
     </div>
   </section>
 
-  <!-- OFFRES -->
+  <!-- OFFRES (Standard corrigée) -->
   <section class="section" id="offres">
     <div class="container">
       <h2>Nos offres simples et transparentes</h2>
@@ -226,7 +184,7 @@
           <ul class="muted">
             <li>Création & optimisation d’annonce</li>
             <li>Accueil voyageurs & assistance 24/7</li>
-            <li>Ménage & gestion consommables</li>
+            <li><strong>Linge & consommables fournis par le propriétaire</strong></li>
             <li>Gestion calendrier & tarification</li>
           </ul>
         </div>
@@ -235,8 +193,8 @@
           <p style="font:700 28px/1 'Playfair Display',serif">20%</p>
           <ul class="muted">
             <li>Tout ce de l’offre Standard</li>
-            <li>Fourniture & rotation du linge</li>
-            <li>Consommables inclus (papier, savons, etc.)</li>
+            <li><strong>Fourniture & rotation du linge par SYANA</strong></li>
+            <li><strong>Consommables inclus</strong> (papier, savons, etc.)</li>
             <li>Contrôles qualité renforcés</li>
           </ul>
         </div>
@@ -261,15 +219,16 @@
   </section>
 
   <!-- GALERIE -->
-  <div class="gallery" style="margin-top:12px">
-  <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80"
-       alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async" />
-  <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80"
-       alt="Suite élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
-  <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80"
-       alt="Terrasse ensoleillée – SYANA Conciergerie" loading="lazy" decoding="async" />
-</div>
-
+  <section class="section" id="galerie">
+    <div class="container">
+      <h2>Galerie</h2>
+      <div class="gallery" style="margin-top:12px">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async" />
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80" alt="Suite élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
+        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80" alt="Terrasse ensoleillée – SYANA Conciergerie" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </section>
 
   <!-- AVIS -->
   <section class="section" id="avis">
@@ -312,25 +271,41 @@
   <section class="section" id="faq">
     <div class="container">
       <h2>FAQ</h2>
-      <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p class="muted">Vous fournissez le logement ; nous assurons l’opérationnel et la relation voyageurs, avec transparence et <strong>contrat de confiance</strong>.</p></details>
-      <details><summary>Proposez-vous des partenaires ?</summary><p class="muted">Oui : <strong>VTC</strong>, <strong>entretien piscine & jardin</strong>, et <strong>guide touristique</strong> (carnet d’adresses & idées d’activités).</p></details>
-      <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p class="muted">Bien sûr : nous vous <strong>rappelons sous 24h</strong>.</p></details>
+    <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p class="muted">Vous fournissez le logement ; nous assurons l’opérationnel et la relation voyageurs, avec transparence et <strong>contrat de confiance</strong>.</p></details>
+    <details><summary>Proposez-vous des partenaires ?</summary><p class="muted">Oui : <strong>VTC</strong>, <strong>entretien piscine & jardin</strong>, et <strong>guide touristique</strong> (carnet d’adresses & idées d’activités).</p></details>
+    <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p class="muted">Bien sûr : nous vous <strong>rappelons sous 24h</strong>.</p></details>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT (FormSubmit sans ouvrir Mail) -->
   <section class="section" id="contact">
     <div class="container">
       <h2>Contact</h2>
       <div class="contact" style="margin-top:10px">
-        <form id="signupForm" class="card" onsubmit="return false;" aria-label="Formulaire d’inscription">
+        <form id="contactForm" class="card" aria-label="Formulaire de contact">
+          <!-- champs visibles -->
           <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
-            <input type="text" name="name" placeholder="Nom" required />
-            <input type="email" name="email" placeholder="Email" required />
+            <input type="text" name="Nom" placeholder="Nom" aria-label="Nom" required />
+            <input type="email" name="Email" placeholder="Email" aria-label="Email" required />
           </div>
-          <textarea name="message" placeholder="Votre message (optionnel)"></textarea>
-          <button class="btn" id="sendBtn">Envoyer</button>
-          <p id="formInfo" class="muted" style="margin:8px 0 0;display:none">Merci ! Nous vous répondrons sous 24h.</p>
+          <textarea name="Message" placeholder="Votre message" aria-label="Message" style="margin-top:12px" required></textarea>
+          <button class="btn" type="submit" style="margin-top:12px">Envoyer</button>
+
+          <!-- confirmations -->
+          <p id="formOk" class="muted" style="display:none;margin-top:10px">
+            Merci pour votre message 🙏 Nous revenons vers vous sous 24 heures (du lundi au dimanche).
+          </p>
+          <p id="formErr" class="muted" style="display:none;margin-top:10px;color:#ffb4b4">
+            Oups, l’envoi a échoué. Veuillez réessayer dans un instant ou écrivez-nous à
+            <a href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>.
+          </p>
+
+          <!-- champs cachés FormSubmit -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Nouveau message – SYANA Conciergerie" />
+          <input type="hidden" name="_template" value="table" />
+          <!-- Auto-réponse envoyée au visiteur -->
+          <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Nous vous répondrons sous 24 heures. — SYANA Conciergerie, Côte d’Azur" />
         </form>
 
         <div class="card" role="group" aria-label="Liens de contact">
@@ -361,18 +336,37 @@
     burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());
     drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});
 
-    // Formulaire (accusé visuel)
-    const form=document.getElementById('signupForm');
-    const info=document.getElementById('formInfo');
-    const btn=document.getElementById('sendBtn');
-    form.addEventListener('submit',()=>{
-      info.style.display='block';
-      btn.disabled=true;
-      // ici tu pourras brancher un vrai envoi (Formspree/Netlify/endpoint)
-    });
+    // ENVOI FORMULAIRE — FormSubmit (sans ouverture de Mail)
+    (function(){
+      const form = document.getElementById('contactForm');
+      const ok = document.getElementById('formOk');
+      const err = document.getElementById('formErr');
+
+      // Endpoint = adresse de réception
+      const ENDPOINT = "https://formsubmit.co/syanaconciergerie@gmail.com";
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        ok.style.display='none'; err.style.display='none';
+
+        const data = new FormData(form);
+        try{
+          const res = await fetch(ENDPOINT, { method:'POST', body:data });
+          if(res.ok){
+            form.reset();
+            ok.style.display='block';
+          }else{
+            err.style.display='block';
+          }
+        }catch{
+          err.style.display='block';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
+
 
 
 
