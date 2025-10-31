@@ -3,50 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>SYANA Conciergerie – Côte d’Azur | La Ciotat, Cassis, Saint-Cyr, Toulon & Marseille</title>
   <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Cassis, Saint-Cyr-sur-Mer, Toulon et Marseille : check-in/out 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin, suivi des avis. Rappel sous 24h." />
-  <meta name="keywords" content="conciergerie La Ciotat, conciergerie Cassis, conciergerie Saint-Cyr-sur-Mer, conciergerie Toulon, conciergerie Marseille, ménage Airbnb, check-in 24/7, Côte d’Azur" />
-  <link rel="canonical" href="https://syana-bc.fr/"/>
-
-  <!-- Favicon / logo -->
+  <link rel="canonical" href="https://syana-bc.fr/" />
   <link rel="icon" href="/assets/images/logo/syana-logo.png" type="image/png" />
 
   <!-- Polices -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://syana-bc.fr/" />
   <meta property="og:title" content="SYANA Conciergerie – Côte d’Azur" />
   <meta property="og:description" content="Conciergerie haut de gamme : 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin." />
   <meta property="og:image" content="https://syana-bc.fr/assets/images/logo/syana-logo.png" />
-
-  <!-- Données structurées (LocalBusiness + FAQ) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"SYANA Conciergerie – Côte d’Azur",
-    "image":"https://syana-bc.fr/assets/images/logo/syana-logo.png",
-    "url":"https://syana-bc.fr/",
-    "telephone":"+33650992263",
-    "address":{"@type":"PostalAddress","addressLocality":"La Ciotat","addressCountry":"FR"},
-    "areaServed":["La Ciotat","Cassis","Saint-Cyr-sur-Mer","Toulon","Marseille"],
-    "description":"Conciergerie haut de gamme : check-in/out 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin, suivi des avis, rappel sous 24h."
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org","@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Comment fonctionnent vos offres 18% et 20% ?","acceptedAnswer":{"@type":"Answer","text":"Standard 18% : gestion complète et assistance 24/7. Gold 20% : services Standard + linge et consommables inclus, contrôles qualité renforcés."}},
-      {"@type":"Question","name":"Avez-vous des partenaires ?","acceptedAnswer":{"@type":"Answer","text":"Oui : chauffeur VTC, entretien piscine, entretien jardin. Un guide touristique est fourni dans chaque appartement."}},
-      {"@type":"Question","name":"Quel est votre délai de rappel ?","acceptedAnswer":{"@type":"Answer","text":"Nous répondons 24/7 et nous rappelons sous 24 heures."}}
-    ]
-  }
-  </script>
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Styles (thème sombre pro) -->
   <style>
@@ -108,6 +80,14 @@
     .hero-banner .overlay{position:absolute;inset:0;display:grid;place-items:center;padding:0 6%}
     .hero-banner h1{margin:0;text-align:center}
 
+    /* Formulaire */
+    form label{display:block;margin:.6rem 0 .3rem}
+    input,textarea{width:100%;background:#0b1220;color:#e5e7eb;border:1px solid var(--ring);border-radius:12px;padding:12px}
+    textarea{min-height:120px;resize:vertical}
+    .btn{display:inline-block;background:var(--brand);color:#111827;border:none;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+    .btn:hover{filter:brightness(1.05)}
+    .note{font-size:.9rem;color:var(--muted)}
+
     /* Galerie */
     .gallery{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .gallery img{width:100%;height:260px;object-fit:cover;border-radius:14px;border:1px solid var(--ring)}
@@ -126,38 +106,32 @@
         <img src="/assets/images/logo/syana-logo.png" alt="Logo SYANA Conciergerie" width="220" height="auto" loading="eager" decoding="async" />
         <span class="word"><strong>SYANA</strong><span>Conciergerie</span></span>
       </a>
-
       <nav class="menu" aria-label="Liens">
         <a href="#services">Services</a>
         <a href="#offres">Offres</a>
         <a href="#partenaires">Partenaires</a>
         <a href="#galerie">Galerie</a>
-        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
         <a href="#destinations">Destinations</a>
         <a href="#faq">FAQ</a>
-        <a class="cta" href="#contact">Contact</a>
       </nav>
-
       <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-controls="drawer" aria-expanded="false"><span></span></button>
     </div>
-
     <div id="drawer" class="drawer" hidden>
       <nav class="menu" aria-label="Menu mobile">
         <a href="#services">Services</a>
         <a href="#offres">Offres</a>
         <a href="#partenaires">Partenaires</a>
         <a href="#galerie">Galerie</a>
-        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
         <a href="#destinations">Destinations</a>
         <a href="#faq">FAQ</a>
-        <a class="cta" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- HÉRO (salon élégant) -->
+  <!-- HÉRO (salon élégant, style précédent) -->
   <section class="hero-banner" id="top" aria-label="Image d’accueil">
-    <!-- Salon élégant (pas de sport/people/makeup) -->
     <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2b8f?auto=format&fit=crop&w=1920&q=80"
          alt="Salon élégant type Airbnb — Côte d’Azur" loading="eager" decoding="async" />
     <div class="overlay">
@@ -266,20 +240,103 @@
     </div>
   </section>
 
-  <!-- GALERIE (3 images intérieures — milieu corrigé) -->
+  <!-- GALERIE (milieu corrigé) -->
   <section class="section" id="galerie">
     <div class="container">
       <h2>Galerie</h2>
       <div class="gallery" style="margin-top:12px">
         <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async" />
-        <!-- Milieu : nouvelle chambre fiable (pas d’erreur) -->
         <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Chambre élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
         <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80" alt="Terrasse ensoleillée – SYANA Conciergerie" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
 
-  <!-- AVIS -->
+  <!-- CONTACT (formulaire remis) -->
+  <section class="section" id="contact" style="background:#0f172a">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="grid cols-2" style="margin-top:12px">
+        <div class="card">
+          <form id="contactForm">
+            <label for="name">Nom complet</label>
+            <input id="name" name="name" type="text" required />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+            <label for="phone">Téléphone</label>
+            <input id="phone" name="phone" type="tel" />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+              <button class="btn" type="submit">Envoyer</button>
+              <span class="note">Réponse sous 24h.</span>
+            </div>
+            <p id="formNotice" class="note" style="margin-top:10px"></p>
+          </form>
+        </div>
+        <div class="card">
+          <p><strong>Email :</strong> <a href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a></p>
+          <p><strong>Tél :</strong> <a href="tel:+33650992263">06 50 99 22 63</a></p>
+          <p class="muted">Zones : La Ciotat, Cassis, Saint-Cyr-sur-Mer, Toulon, Marseille.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATIONS (visuels cohérents) -->
+  <section class="section" id="destinations">
+    <div class="container">
+      <h2>Destinations</h2>
+
+      <div class="grid cols-3" style="margin-top:12px">
+        <div class="card" id="la-ciotat">
+          <strong>La Ciotat</strong>
+          <p class="muted">Port, calanques & plages familiales.</p>
+          <img src="https://images.unsplash.com/photo-1505764706515-aa95265c5abc?auto=format&fit=crop&w=800&q=70" alt="Port de La Ciotat" loading="lazy" decoding="async" />
+        </div>
+        <div class="card" id="cassis">
+          <strong>Cassis</strong>
+          <p class="muted">Falaises, vignobles et calanques turquoise.</p>
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Calanques près de Cassis" loading="lazy" decoding="async" />
+        </div>
+        <div class="card" id="toulon">
+          <strong>Toulon</strong>
+          <p class="muted">Rade, Mont Faron, marchés provençaux.</p>
+          <img src="https://images.unsplash.com/photo-1544551763-7ef4200b2507?auto=format&fit=crop&w=800&q=70" alt="Rade de Toulon" loading="lazy" decoding="async" />
+        </div>
+      </div>
+
+      <div class="grid cols-3" style="margin-top:22px">
+        <div class="card" id="marseille">
+          <strong>Marseille</strong>
+          <p class="muted">Vieux-Port, Panier, Notre-Dame-de-la-Garde.</p>
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=70" alt="Vieux-Port / ND-de-la-Garde au loin" loading="lazy" decoding="async" />
+        </div>
+        <div class="card">
+          <strong>Saint-Cyr-sur-Mer</strong>
+          <p class="muted">Lecques, promenades & sports nautiques.</p>
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=70" alt="Plage Saint-Cyr-sur-Mer" loading="lazy" decoding="async" />
+        </div>
+        <div class="card">
+          <strong>Guide & activités</strong>
+          <p class="muted">Adresses, restaurants, plages & idées sorties.</p>
+          <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=70" alt="Guide touristique" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="background:#0f172a">
+    <div class="container">
+      <h2>FAQ</h2>
+      <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p>Standard 18% : gestion complète & assistance 24/7. Gold 20% : Standard + linge & consommables inclus, contrôles qualité renforcés.</p></details>
+      <details><summary>Avez-vous des partenaires ?</summary><p>Oui : chauffeur VTC, entretien piscine & jardin. Guide touristique fourni dans chaque appartement.</p></details>
+      <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p>Bien sûr : nous vous rappelons sous 24h.</p></details>
+    </div>
+  </section>
+
+  <!-- AVIS (fin de page) -->
   <section class="section" id="avis" style="background:#0f172a">
     <div class="container">
       <h2>Avis</h2>
@@ -303,72 +360,6 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS -->
-  <section class="section" id="destinations">
-    <div class="container">
-      <h2>Destinations</h2>
-      <div class="grid cols-3" style="margin-top:12px">
-        <div class="card" id="la-ciotat">
-          <strong>La Ciotat</strong>
-          <p class="muted">Calanques, port et plages familiales.</p>
-          <img src="https://images.unsplash.com/photo-1549890762-0a3f8933bcf2?auto=format&fit=crop&w=800&q=70" alt="Calanques de La Ciotat" loading="lazy" decoding="async" />
-        </div>
-        <div class="card" id="cassis">
-          <strong>Cassis</strong>
-          <p class="muted">Falaises, vignobles et criques turquoise.</p>
-          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Falaises / calanques près de Cassis" loading="lazy" decoding="async" />
-        </div>
-        <div class="card" id="saint-cyr-sur-mer">
-          <strong>Saint-Cyr-sur-Mer</strong>
-          <p class="muted">Lecques, promenades & sports nautiques.</p>
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=70" alt="Plage Saint-Cyr-sur-Mer" loading="lazy" decoding="async" />
-        </div>
-      </div>
-
-      <div class="grid cols-3" style="margin-top:22px">
-        <div class="card" id="toulon">
-          <strong>Toulon</strong>
-          <p class="muted">Rade, Mont Faron, marchés provençaux.</p>
-          <img src="https://images.unsplash.com/photo-1544551763-7ef4200b2507?auto=format&fit=crop&w=800&q=70" alt="Vue sur la rade de Toulon" loading="lazy" decoding="async" />
-        </div>
-        <div class="card" id="marseille">
-          <strong>Marseille</strong>
-          <p class="muted">Vieux-Port, Panier, calanques de Sormiou & Sugiton.</p>
-          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=70" alt="Vieux-Port de Marseille" loading="lazy" decoding="async" />
-          <ul class="muted" style="margin:.6em 0 0 1.2em">
-            <li>Balade Vieux-Port & Panier</li>
-            <li>Notre-Dame de la Garde</li>
-            <li>Calanques (Sormiou, Sugiton)</li>
-            <li>MUCEM, forts Saint-Jean & Saint-Nicolas</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Guide & activités</strong>
-          <p class="muted">Chaque ville : adresses, restaurants, plages & idées sorties.</p>
-          <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=70" alt="Guide touristique" loading="lazy" decoding="async" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq" style="background:#0f172a">
-    <div class="container">
-      <h2>FAQ</h2>
-      <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p>Vous fournissez le logement ; nous assurons l’opérationnel et la relation voyageurs, avec transparence et <strong>contrat de confiance</strong>.</p></details>
-      <details><summary>Proposez-vous des partenaires ?</summary><p>Oui : <strong>VTC</strong>, <strong>entretien piscine & jardin</strong>, et <strong>guide touristique</strong> (carnet d’adresses & idées d’activités).</p></details>
-      <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p>Bien sûr : nous vous <strong>rappelons sous 24h</strong>.</p></details>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container contact">
-      <a class="cta" href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>
-      <a class="cta" href="tel:+33650992263">06 50 99 22 63</a>
-    </div>
-  </section>
-
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
       <span>© <span id="year"></span> SYANA Conciergerie • Côte d’Azur</span>
@@ -387,9 +378,35 @@
     const closeDrawer=()=>{drawer.classList.remove('open');drawer.hidden=true;burger.setAttribute('aria-expanded','false');}
     burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());
     drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});
+
+    // FORMULAIRE : Ajax Formspree (remplace TON_ID ci-dessous)
+    const form = document.getElementById('contactForm');
+    const notice = document.getElementById('formNotice');
+    const FORMSPREE = "https://formspree.io/f/TON_ID"; // <-- remplace TON_ID + Commit/Push
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      notice.textContent = "Envoi…";
+      try{
+        const data = Object.fromEntries(new FormData(form).entries());
+        if(!FORMSPREE.includes('/f/TON_ID')){
+          const r = await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+          if(r.ok){
+            form.reset();
+            notice.textContent = "Merci ! Votre demande a bien été envoyée. Nous revenons vers vous sous 24h.";
+          }else{
+            notice.textContent = "Impossible d’envoyer pour le moment. Réessayez plus tard.";
+          }
+        }else{
+          notice.textContent = "Formulaire prêt. Ajoutez votre ID Formspree puis Commit → Push pour activer l’envoi.";
+        }
+      }catch(err){
+        notice.textContent = "Erreur réseau : vérifiez votre connexion.";
+      }
+    });
   </script>
 </body>
 </html>
+
 
 
 
