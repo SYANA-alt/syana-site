@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- SEO -->
   <title>SYANA Conciergerie – Côte d’Azur | La Ciotat, Cassis, Saint-Cyr, Toulon & Marseille</title>
   <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Cassis, Saint-Cyr-sur-Mer, Toulon et Marseille : check-in/out 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin, suivi des avis. Rappel sous 24h." />
   <meta name="keywords" content="conciergerie La Ciotat, conciergerie Cassis, conciergerie Saint-Cyr-sur-Mer, conciergerie Toulon, conciergerie Marseille, ménage Airbnb, check-in 24/7, Côte d’Azur" />
-  <link rel="canonical" href="https://syana-bc.fr/" />
+  <link rel="canonical" href="https://syana-bc.fr/"/>
+
+  <!-- Favicon / logo -->
   <link rel="icon" href="/assets/images/logo/syana-logo.png" type="image/png" />
 
   <!-- Polices -->
@@ -19,16 +20,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://syana-bc.fr/" />
   <meta property="og:title" content="SYANA Conciergerie – Côte d’Azur" />
-  <meta property="og:description" content="Conciergerie haut de gamme. 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin." />
+  <meta property="og:description" content="Conciergerie haut de gamme : 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin." />
   <meta property="og:image" content="https://syana-bc.fr/assets/images/logo/syana-logo.png" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SYANA Conciergerie – Côte d’Azur" />
-  <meta name="twitter:description" content="Conciergerie haut de gamme sur la Côte d’Azur. Rappel sous 24h." />
-  <meta name="twitter:image" content="https://syana-bc.fr/assets/images/logo/syana-logo.png" />
-
-  <!-- Données structurées -->
+  <!-- Données structurées (LocalBusiness + FAQ) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -107,7 +102,7 @@
     .price{font:700 28px/1 "Playfair Display",serif;color:var(--brand)}
     .stars{color:var(--gold);font-size:20px;letter-spacing:2px}
 
-    /* Héro (image + titre lisible) */
+    /* HÉRO (image + titre lisible) */
     .hero-banner{position:relative;isolation:isolate}
     .hero-banner img{width:100%;height:56vh;min-height:360px;object-fit:cover;filter:brightness(.55)}
     .hero-banner .overlay{position:absolute;inset:0;display:grid;place-items:center;padding:0 6%}
@@ -160,8 +155,9 @@
     </div>
   </header>
 
-  <!-- HÉRO (salon classe Airbnb) -->
+  <!-- HÉRO (salon élégant) -->
   <section class="hero-banner" id="top" aria-label="Image d’accueil">
+    <!-- Salon élégant (pas de sport/people/makeup) -->
     <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2b8f?auto=format&fit=crop&w=1920&q=80"
          alt="Salon élégant type Airbnb — Côte d’Azur" loading="eager" decoding="async" />
     <div class="overlay">
@@ -216,28 +212,28 @@
   <section class="section" id="offres" style="background:#0f172a">
     <div class="container">
       <h2>Nos offres simples et transparentes</h2>
-    <div class="grid cols-2" style="margin-top:12px">
-      <div class="card">
-        <h3>Standard</h3>
-        <p class="price">18%</p>
-        <ul>
-          <li>Création & optimisation d’annonce</li>
-          <li>Accueil voyageurs & assistance 24/7</li>
-          <li>Ménage & gestion consommables</li>
-          <li>Gestion calendrier & tarification</li>
-        </ul>
+      <div class="grid cols-2" style="margin-top:12px">
+        <div class="card">
+          <h3>Standard</h3>
+          <p class="price">18%</p>
+          <ul>
+            <li>Création & optimisation d’annonce</li>
+            <li>Accueil voyageurs & assistance 24/7</li>
+            <li>Ménage & gestion consommables</li>
+            <li>Gestion calendrier & tarification</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Gold</h3>
+          <p class="price">20%</p>
+          <ul>
+            <li>Tout ce de l’offre Standard</li>
+            <li>Fourniture & rotation du linge</li>
+            <li>Consommables inclus (papier, savons, etc.)</li>
+            <li>Contrôles qualité renforcés</li>
+          </ul>
+        </div>
       </div>
-      <div class="card">
-        <h3>Gold</h3>
-        <p class="price">20%</p>
-        <ul>
-          <li>Tout ce de l’offre Standard</li>
-          <li>Fourniture & rotation du linge</li>
-          <li>Consommables inclus (papier, savons, etc.)</li>
-          <li>Contrôles qualité renforcés</li>
-        </ul>
-      </div>
-    </div>
     </div>
   </section>
 
@@ -248,6 +244,7 @@
       <div class="grid cols-3" style="margin-top:12px">
         <div class="card"><strong>Chauffeur privé (VTC)</strong>
           <p class="muted">Transferts aéroport/gare, trajets premium.</p>
+          <!-- Berline noire VTC, pas de voiture de sport -->
           <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=800&q=70" alt="Berline noire chauffeur VTC" loading="lazy" decoding="async" />
         </div>
         <div class="card"><strong>Entretien piscine</strong>
@@ -269,13 +266,14 @@
     </div>
   </section>
 
-  <!-- GALERIE -->
+  <!-- GALERIE (3 images intérieures — milieu corrigé) -->
   <section class="section" id="galerie">
     <div class="container">
       <h2>Galerie</h2>
       <div class="gallery" style="margin-top:12px">
         <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1600607687920-4ce1b2153a1f?auto=format&fit=crop&w=1600&q=80" alt="Suite élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
+        <!-- Milieu : nouvelle chambre fiable (pas d’erreur) -->
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80" alt="Chambre élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
         <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80" alt="Terrasse ensoleillée – SYANA Conciergerie" loading="lazy" decoding="async" />
       </div>
     </div>
@@ -305,24 +303,21 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS (toutes intégrées ici, avec ancres) -->
+  <!-- DESTINATIONS -->
   <section class="section" id="destinations">
     <div class="container">
       <h2>Destinations</h2>
-
       <div class="grid cols-3" style="margin-top:12px">
         <div class="card" id="la-ciotat">
           <strong>La Ciotat</strong>
           <p class="muted">Calanques, port et plages familiales.</p>
           <img src="https://images.unsplash.com/photo-1549890762-0a3f8933bcf2?auto=format&fit=crop&w=800&q=70" alt="Calanques de La Ciotat" loading="lazy" decoding="async" />
         </div>
-
         <div class="card" id="cassis">
           <strong>Cassis</strong>
           <p class="muted">Falaises, vignobles et criques turquoise.</p>
           <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Falaises / calanques près de Cassis" loading="lazy" decoding="async" />
         </div>
-
         <div class="card" id="saint-cyr-sur-mer">
           <strong>Saint-Cyr-sur-Mer</strong>
           <p class="muted">Lecques, promenades & sports nautiques.</p>
@@ -336,7 +331,6 @@
           <p class="muted">Rade, Mont Faron, marchés provençaux.</p>
           <img src="https://images.unsplash.com/photo-1544551763-7ef4200b2507?auto=format&fit=crop&w=800&q=70" alt="Vue sur la rade de Toulon" loading="lazy" decoding="async" />
         </div>
-
         <div class="card" id="marseille">
           <strong>Marseille</strong>
           <p class="muted">Vieux-Port, Panier, calanques de Sormiou & Sugiton.</p>
@@ -348,14 +342,12 @@
             <li>MUCEM, forts Saint-Jean & Saint-Nicolas</li>
           </ul>
         </div>
-
         <div class="card">
           <strong>Guide & activités</strong>
           <p class="muted">Chaque ville : adresses, restaurants, plages & idées sorties.</p>
           <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=70" alt="Guide touristique" loading="lazy" decoding="async" />
         </div>
       </div>
-
     </div>
   </section>
 
@@ -398,6 +390,7 @@
   </script>
 </body>
 </html>
+
 
 
 
