@@ -3,93 +3,123 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SYANA Conciergerie – Côte d’Azur</title>
-  <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Cassis, Saint-Cyr-sur-Mer et Toulon : 24/7, check-in/out, réapprovisionnement, suivi des évaluations, partenaires VTC, piscine & jardin, guide touristique, rappel sous 24h." />
+
+  <!-- SEO -->
+  <title>SYANA Conciergerie – Côte d’Azur | La Ciotat, Cassis, Saint-Cyr, Toulon & Marseille</title>
+  <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Cassis, Saint-Cyr-sur-Mer, Toulon et Marseille : check-in/out 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin, suivi des avis. Rappel sous 24h." />
+  <meta name="keywords" content="conciergerie La Ciotat, conciergerie Cassis, conciergerie Saint-Cyr-sur-Mer, conciergerie Toulon, conciergerie Marseille, ménage Airbnb, check-in 24/7, Côte d’Azur" />
+  <link rel="canonical" href="https://syana-bc.fr/" />
+  <link rel="icon" href="/assets/images/logo/syana-logo.png" type="image/png" />
 
   <!-- Polices -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://syana-bc.fr/" />
+  <meta property="og:title" content="SYANA Conciergerie – Côte d’Azur" />
+  <meta property="og:description" content="Conciergerie haut de gamme. 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin." />
+  <meta property="og:image" content="https://syana-bc.fr/assets/images/logo/syana-logo.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SYANA Conciergerie – Côte d’Azur" />
+  <meta name="twitter:description" content="Conciergerie haut de gamme sur la Côte d’Azur. Rappel sous 24h." />
+  <meta name="twitter:image" content="https://syana-bc.fr/assets/images/logo/syana-logo.png" />
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"SYANA Conciergerie – Côte d’Azur",
+    "image":"https://syana-bc.fr/assets/images/logo/syana-logo.png",
+    "url":"https://syana-bc.fr/",
+    "telephone":"+33650992263",
+    "address":{"@type":"PostalAddress","addressLocality":"La Ciotat","addressCountry":"FR"},
+    "areaServed":["La Ciotat","Cassis","Saint-Cyr-sur-Mer","Toulon","Marseille"],
+    "description":"Conciergerie haut de gamme : check-in/out 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin, suivi des avis, rappel sous 24h."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Comment fonctionnent vos offres 18% et 20% ?","acceptedAnswer":{"@type":"Answer","text":"Standard 18% : gestion complète et assistance 24/7. Gold 20% : services Standard + linge et consommables inclus, contrôles qualité renforcés."}},
+      {"@type":"Question","name":"Avez-vous des partenaires ?","acceptedAnswer":{"@type":"Answer","text":"Oui : chauffeur VTC, entretien piscine, entretien jardin. Un guide touristique est fourni dans chaque appartement."}},
+      {"@type":"Question","name":"Quel est votre délai de rappel ?","acceptedAnswer":{"@type":"Answer","text":"Nous répondons 24/7 et nous rappelons sous 24 heures."}}
+    ]
+  }
+  </script>
+
+  <!-- Styles (thème sombre pro) -->
   <style>
     :root{
-      --ink:#f5f7fa; --ink-dim:#a3bac7; --gold:#ffc451;
-      --bg:#0b0d14; --card:#111827; --ring:rgba(255,255,255,.06);
-      --shadow:0 18px 38px rgba(2,6,23,.35); --radius:18px; --container:1120px;
+      --ink:#e5e7eb; --muted:#9ca3af; --brand:#b28a36; --gold:#eab308;
+      --bg:#0b0f1a; --panel:#111827; --ring:rgba(255,255,255,.08);
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
     html,body{margin:0}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
     img{max-width:100%;display:block}
-    .container{width:min(var(--container),92%);margin-inline:auto}
 
-    /* Header / Nav */
-    header{position:sticky;top:0;z-index:60;background:rgba(11,13,20,.72);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--ring)}
+    .container{width:min(1120px,92%);margin-inline:auto}
+    h1{font:700 clamp(28px,5vw,48px)/1.12 "Playfair Display",serif;margin:.35em 0 .3em;color:#fff}
+    h2{font:700 28px "Playfair Display",serif;margin:0 0 14px;color:#fff}
+    .section{padding:56px 0}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;padding:6px 10px;background:#0f172a;border-radius:999px;border:1px solid var(--ring);font-weight:600;color:#f3f4f6}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.55);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--ring)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-    .brand img{height:56px;width:auto;display:block}
-    .menu{display:flex;align-items:center;gap:18px}
-    .menu a{text-decoration:none;color:var(--ink);font-weight:500;padding:8px 10px;border-radius:10px}
-    .menu a:hover{background:rgba(255,255,255,.06)}
-    .cta{background:#1f2937;color:#fff;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:var(--shadow)}
+    .brand img{height:56px;width:auto}
+    .brand .word{display:flex;flex-direction:column}
+    .brand .word strong{font:700 22px/1 "Playfair Display",serif;letter-spacing:.3px}
+    .brand .word span{font:500 12px/1.1 Inter,system-ui;color:var(--muted)}
+    .menu{display:flex;align-items:center;gap:14px}
+    .menu a{text-decoration:none;color:#e5e7eb;font-weight:500;padding:8px 10px;border-radius:10px}
+    .menu a:hover{background:#0f172a}
+    .cta{background:var(--brand);color:#111827;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:var(--shadow)}
     .cta:hover{filter:brightness(1.05)}
-    .burger{display:none;width:44px;height:44px;border:1px solid var(--ring);border-radius:12px;background:#0f172a;align-items:center;justify-content:center}
-    .burger span{width:20px;height:2px;background:var(--ink);position:relative;display:block}
-    .burger span:before,.burger span:after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--ink)}
+
+    .burger{display:none;width:44px;height:44px;border:1px solid var(--ring);border-radius:12px;background:#0b0f1a;align-items:center;justify-content:center}
+    .burger span{width:20px;height:2px;background:#fff;position:relative;display:block}
+    .burger span:before,.burger span:after{content:"";position:absolute;left:0;right:0;height:2px;background:#fff}
     .burger span:before{top:-6px}.burger span:after{top:6px}
     @media (max-width:920px){.menu{display:none}.burger{display:flex}}
     .drawer{display:none}
     .drawer.open{display:block}
     @media (max-width:920px){
-      .drawer{position:fixed;inset:64px 0 auto 0;background:#0b0d14;border-top:1px solid var(--ring)}
+      .drawer{position:fixed;inset:64px 0 auto 0;background:#0b0f1a;border-top:1px solid var(--ring)}
       .drawer .menu{display:flex;flex-direction:column;padding:12px 16px;gap:6px}
       .drawer .menu a{padding:12px 10px}
       .drawer .cta{display:inline-block;margin:8px 10px 16px}
     }
 
-    /* Grilles & cartes */
-    .section{padding:56px 0}
     .grid{display:grid;gap:22px}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
     @media (max-width:920px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
-    .card{border:1px solid var(--ring);border-radius:var(--radius);background:var(--card);padding:18px;box-shadow:var(--shadow)}
-    .badge{display:inline-block;padding:6px 10px;background:rgba(255,255,255,.06);border:1px solid var(--ring);border-radius:999px;font-weight:600;color:var(--ink-dim)}
-    h1{font:700 clamp(28px,5vw,48px)/1.12 "Playfair Display",serif;margin:.35em 0 .3em}
-    h2{font:700 28px "Playfair Display",serif;margin:0 0 14px}
-    .muted{color:var(--ink-dim)}
+    .card{border:1px solid var(--ring);border-radius:var(--radius);background:var(--panel);padding:18px;box-shadow:var(--shadow)}
+    .price{font:700 28px/1 "Playfair Display",serif;color:var(--brand)}
+    .stars{color:var(--gold);font-size:20px;letter-spacing:2px}
 
-    /* Hero */
-    .hero{
-      position:relative;overflow:hidden;
-      background:linear-gradient(180deg,rgba(2,6,23,.35),rgba(2,6,23,.75)), url("https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
-    }
-    .hero .wrap{padding:60px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start}
-    @media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
-    .eyebrow{color:var(--ink-dim);letter-spacing:.18em;text-transform:uppercase;font-weight:600;font-size:12px}
-    .hero-card ul{margin:0;padding-left:18px}
-    .hero-card li{margin:.35em 0}
+    /* Héro (image + titre lisible) */
+    .hero-banner{position:relative;isolation:isolate}
+    .hero-banner img{width:100%;height:56vh;min-height:360px;object-fit:cover;filter:brightness(.55)}
+    .hero-banner .overlay{position:absolute;inset:0;display:grid;place-items:center;padding:0 6%}
+    .hero-banner h1{margin:0;text-align:center}
 
     /* Galerie */
     .gallery{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
     .gallery img{width:100%;height:260px;object-fit:cover;border-radius:14px;border:1px solid var(--ring)}
     @media (max-width:920px){.gallery{grid-template-columns:1fr}.gallery img{height:220px}}
 
-    /* Avis */
-    .stars{color:var(--gold);font-size:20px;letter-spacing:2px}
-    .quote{margin:.5em 0 0;color:#d7e2ea}
-    .name{color:var(--ink-dim);font-size:14px}
-
-    /* Formulaire contact */
-    .contact{display:grid;gap:22px;grid-template-columns:1fr .9fr}
-    @media (max-width:920px){.contact{grid-template-columns:1fr}}
-    input,textarea{
-      width:100%;color:var(--ink);background:#0f172a;border:1px solid var(--ring);
-      border-radius:12px;padding:12px 14px;font:inherit
-    }
-    textarea{min-height:120px;resize:vertical}
-    .btn{background:#1f2937;color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:600;cursor:pointer}
-    .btn:hover{filter:brightness(1.05)}
-    footer{padding:28px 0;border-top:1px solid var(--ring);color:var(--ink-dim);font-size:14px}
+    .contact{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    footer{padding:28px 0;border-top:1px solid var(--ring);color:var(--muted);font-size:14px}
   </style>
 </head>
 <body>
@@ -98,8 +128,8 @@
   <header>
     <div class="container nav" role="navigation" aria-label="Navigation principale">
       <a class="brand" href="#top" aria-label="Accueil">
-        <!-- LOGO (chemin stable). Assure-toi que le fichier existe à assets/images/logo/syana-logo.png -->
         <img src="/assets/images/logo/syana-logo.png" alt="Logo SYANA Conciergerie" width="220" height="auto" loading="eager" decoding="async" />
+        <span class="word"><strong>SYANA</strong><span>Conciergerie</span></span>
       </a>
 
       <nav class="menu" aria-label="Liens">
@@ -130,20 +160,29 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="container wrap">
+  <!-- HÉRO (salon classe Airbnb) -->
+  <section class="hero-banner" id="top" aria-label="Image d’accueil">
+    <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2b8f?auto=format&fit=crop&w=1920&q=80"
+         alt="Salon élégant type Airbnb — Côte d’Azur" loading="eager" decoding="async" />
+    <div class="overlay">
+      <h1>SYANA Conciergerie – l’élégance au service de vos séjours d’exception</h1>
+    </div>
+  </section>
+
+  <!-- INTRO + points clés -->
+  <section class="section">
+    <div class="container" style="display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center">
       <div>
-        <div class="eyebrow">Conciergerie haut de gamme</div>
-        <h1>L’élégance au service de vos séjours d’exception</h1>
-        <p class="muted">Sélection rigoureuse de vos hôtes, service téléphonique 24/7, check-in/out 24/7, réapprovisionnement des consommables, suivi des évaluations et <strong>5 ans d’expérience</strong>. Rappel sous 24h : sérénité garantie par un contrat de confiance.</p>
+        <div class="muted" style="letter-spacing:.18em;text-transform:uppercase;font-weight:600;font-size:12px">Conciergerie haut de gamme</div>
+        <p class="muted">Basés à La Ciotat, nous accompagnons les propriétaires avec un service transparent, fiable et raffiné : <strong>5 ans d’expérience</strong>, gestion soignée, et séjours mémorables pour vos hôtes.</p>
       </div>
-      <div class="card hero-card">
+      <div class="card">
         <h3 style="margin:0 0 8px">Points clés</h3>
         <ul>
-          <li>Sélection des hôtes (clients) & gestion de l’expérience</li>
-          <li>Photographe de votre logement & optimisation d’annonce</li>
-          <li>Partenaires : VTC, piscine & jardin, guide touristique</li>
+          <li>Service téléphonique <strong>24/7</strong> & check-in/check-out <strong>24/7</strong></li>
+          <li><strong>Réapprovisionnement</strong> des consommables</li>
+          <li><strong>Suivi des évaluations</strong> par vos hôtes</li>
+          <li><strong>Rappel sous 24h</strong> – sérénité via contrat de confiance</li>
         </ul>
       </div>
     </div>
@@ -157,48 +196,48 @@
         <div class="card">
           <div class="badge">Séjours d’exception</div>
           <h3>Accueil & expérience</h3>
-          <p class="muted">Check-in soigné, guide d’accueil, recommandations locales triées (plages, restaurants, balades). Disponibilité & réactivité pour des avis 5★.</p>
+          <p>Check-in soigné, guide d’accueil, recommandations locales triées (plages, restaurants, balades). Disponibilité & réactivité pour des avis 5★.</p>
         </div>
         <div class="card">
           <div class="badge">Mise en valeur</div>
           <h3>Photos & annonces</h3>
-          <p class="muted">Création d’annonce, <strong>photographe</strong> de votre logement, optimisation titres & descriptions, gestion calendrier & tarification.</p>
+          <p>Création d’annonce, <strong>photographe</strong> de votre logement, optimisation titres & descriptions, gestion calendrier & tarification.</p>
         </div>
         <div class="card">
           <div class="badge">Clé en main</div>
           <h3>Gestion opérationnelle</h3>
-          <p class="muted">Ménage pro, petites maintenances, linge/consommables selon l’offre. Suivi des évaluations et rappels rapides.</p>
+          <p>Ménage pro, petites maintenances, linge/consommables selon l’offre. Suivi des évaluations et rappels rapides.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- OFFRES (Standard corrigée) -->
-  <section class="section" id="offres">
+  <!-- OFFRES -->
+  <section class="section" id="offres" style="background:#0f172a">
     <div class="container">
       <h2>Nos offres simples et transparentes</h2>
-      <div class="grid cols-2" style="margin-top:12px">
-        <div class="card">
-          <h3>Standard</h3>
-          <p style="font:700 28px/1 'Playfair Display',serif">18%</p>
-          <ul class="muted">
-            <li>Création & optimisation d’annonce</li>
-            <li>Accueil voyageurs & assistance 24/7</li>
-            <li><strong>Linge & consommables fournis par le propriétaire</strong></li>
-            <li>Gestion calendrier & tarification</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Gold</h3>
-          <p style="font:700 28px/1 'Playfair Display',serif">20%</p>
-          <ul class="muted">
-            <li>Tout ce de l’offre Standard</li>
-            <li><strong>Fourniture & rotation du linge par SYANA</strong></li>
-            <li><strong>Consommables inclus</strong> (papier, savons, etc.)</li>
-            <li>Contrôles qualité renforcés</li>
-          </ul>
-        </div>
+    <div class="grid cols-2" style="margin-top:12px">
+      <div class="card">
+        <h3>Standard</h3>
+        <p class="price">18%</p>
+        <ul>
+          <li>Création & optimisation d’annonce</li>
+          <li>Accueil voyageurs & assistance 24/7</li>
+          <li>Ménage & gestion consommables</li>
+          <li>Gestion calendrier & tarification</li>
+        </ul>
       </div>
+      <div class="card">
+        <h3>Gold</h3>
+        <p class="price">20%</p>
+        <ul>
+          <li>Tout ce de l’offre Standard</li>
+          <li>Fourniture & rotation du linge</li>
+          <li>Consommables inclus (papier, savons, etc.)</li>
+          <li>Contrôles qualité renforcés</li>
+        </ul>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -207,13 +246,25 @@
     <div class="container">
       <h2>Partenaires</h2>
       <div class="grid cols-3" style="margin-top:12px">
-        <div class="card"><strong>Chauffeur privé (VTC)</strong><p class="muted">Transferts aéroport/gare, trajets premium pour vos hôtes.</p></div>
-        <div class="card"><strong>Entretien piscine</strong><p class="muted">Suivi régulier, analyse de l’eau, mise en route saisonnière.</p></div>
-        <div class="card"><strong>Entretien jardin</strong><p class="muted">Tonte, taille, arrosage — extérieurs impeccables.</p></div>
+        <div class="card"><strong>Chauffeur privé (VTC)</strong>
+          <p class="muted">Transferts aéroport/gare, trajets premium.</p>
+          <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=800&q=70" alt="Berline noire chauffeur VTC" loading="lazy" decoding="async" />
+        </div>
+        <div class="card"><strong>Entretien piscine</strong>
+          <p class="muted">Suivi régulier, analyse de l’eau, mise en route.</p>
+          <img src="https://images.unsplash.com/photo-1544989164-31dc3c645987?auto=format&fit=crop&w=800&q=70" alt="Entretien de piscine" loading="lazy" decoding="async" />
+        </div>
+        <div class="card"><strong>Entretien jardin</strong>
+          <p class="muted">Tonte, taille, arrosage — extérieurs impeccables.</p>
+          <img src="https://images.unsplash.com/photo-1463436755683-3f805a9d1192?auto=format&fit=crop&w=800&q=70" alt="Taille de buissons au sécateur" loading="lazy" decoding="async" />
+        </div>
       </div>
-      <div class="card" style="margin-top:16px">
-        <strong>Guide touristique (dans chaque appartement)</strong>
-        <p class="muted">Carnet d’adresses & activités : plages, calanques, restaurants, marchés, sorties, bien-être.</p>
+      <div class="card" style="margin-top:16px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center">
+        <div>
+          <strong>Guide touristique (dans chaque appartement)</strong>
+          <p class="muted">Carnet d’adresses & activités : plages, calanques, restaurants, marchés, sorties, bien-être.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=640&q=70" alt="Manuel / guide touristique" loading="lazy" decoding="async" style="width:120px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--ring)"/>
       </div>
     </div>
   </section>
@@ -224,96 +275,105 @@
       <h2>Galerie</h2>
       <div class="gallery" style="margin-top:12px">
         <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async" />
-        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80" alt="Suite élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
+        <img src="https://images.unsplash.com/photo-1600607687920-4ce1b2153a1f?auto=format&fit=crop&w=1600&q=80" alt="Suite élégante – SYANA Conciergerie" loading="lazy" decoding="async" />
         <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80" alt="Terrasse ensoleillée – SYANA Conciergerie" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
 
   <!-- AVIS -->
-  <section class="section" id="avis">
+  <section class="section" id="avis" style="background:#0f172a">
     <div class="container">
       <h2>Avis</h2>
       <div class="grid cols-3" style="margin-top:12px">
         <div class="card">
           <div class="stars" aria-label="Note 5 sur 5">★★★★★</div>
           <p class="quote">“Accueil parfait et communication fluide. Appartement impeccable !”</p>
-          <div class="name">— Camille R.</div>
+          <p class="muted">— Claire, propriétaire à Cassis</p>
         </div>
         <div class="card">
           <div class="stars" aria-label="Note 5 sur 5">★★★★★</div>
           <p class="quote">“Propreté irréprochable, conseils locaux au top. Nous reviendrons.”</p>
-          <div class="name">— Louis & Emma</div>
+          <p class="muted">— Thomas & Léa, voyageurs</p>
         </div>
         <div class="card">
           <div class="stars" aria-label="Note 5 sur 5">★★★★★</div>
           <p class="quote">“Gestion très pro, invités ravis et calendrier optimisé.”</p>
-          <div class="name">— Stéphane M.</div>
+          <p class="muted">— Julien, propriétaire à La Ciotat</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DESTINATIONS -->
+  <!-- DESTINATIONS (toutes intégrées ici, avec ancres) -->
   <section class="section" id="destinations">
     <div class="container">
       <h2>Destinations</h2>
+
       <div class="grid cols-3" style="margin-top:12px">
-        <div class="card"><strong>La Ciotat</strong><p class="muted">Calanques, port et plages familiales.</p></div>
-        <div class="card"><strong>Cassis</strong><p class="muted">Falaises, vignobles et criques turquoise.</p></div>
-        <div class="card"><strong>Saint-Cyr-sur-Mer</strong><p class="muted">Lecques, promenades & sports nautiques.</p></div>
-        <div class="card"><strong>Toulon</strong><p class="muted">Rade, Mont Faron & cœur historique ensoleillé.</p></div>
+        <div class="card" id="la-ciotat">
+          <strong>La Ciotat</strong>
+          <p class="muted">Calanques, port et plages familiales.</p>
+          <img src="https://images.unsplash.com/photo-1549890762-0a3f8933bcf2?auto=format&fit=crop&w=800&q=70" alt="Calanques de La Ciotat" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="card" id="cassis">
+          <strong>Cassis</strong>
+          <p class="muted">Falaises, vignobles et criques turquoise.</p>
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Falaises / calanques près de Cassis" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="card" id="saint-cyr-sur-mer">
+          <strong>Saint-Cyr-sur-Mer</strong>
+          <p class="muted">Lecques, promenades & sports nautiques.</p>
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=70" alt="Plage Saint-Cyr-sur-Mer" loading="lazy" decoding="async" />
+        </div>
       </div>
+
+      <div class="grid cols-3" style="margin-top:22px">
+        <div class="card" id="toulon">
+          <strong>Toulon</strong>
+          <p class="muted">Rade, Mont Faron, marchés provençaux.</p>
+          <img src="https://images.unsplash.com/photo-1544551763-7ef4200b2507?auto=format&fit=crop&w=800&q=70" alt="Vue sur la rade de Toulon" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="card" id="marseille">
+          <strong>Marseille</strong>
+          <p class="muted">Vieux-Port, Panier, calanques de Sormiou & Sugiton.</p>
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=70" alt="Vieux-Port de Marseille" loading="lazy" decoding="async" />
+          <ul class="muted" style="margin:.6em 0 0 1.2em">
+            <li>Balade Vieux-Port & Panier</li>
+            <li>Notre-Dame de la Garde</li>
+            <li>Calanques (Sormiou, Sugiton)</li>
+            <li>MUCEM, forts Saint-Jean & Saint-Nicolas</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>Guide & activités</strong>
+          <p class="muted">Chaque ville : adresses, restaurants, plages & idées sorties.</p>
+          <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=70" alt="Guide touristique" loading="lazy" decoding="async" />
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="section" id="faq" style="background:#0f172a">
     <div class="container">
       <h2>FAQ</h2>
-    <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p class="muted">Vous fournissez le logement ; nous assurons l’opérationnel et la relation voyageurs, avec transparence et <strong>contrat de confiance</strong>.</p></details>
-    <details><summary>Proposez-vous des partenaires ?</summary><p class="muted">Oui : <strong>VTC</strong>, <strong>entretien piscine & jardin</strong>, et <strong>guide touristique</strong> (carnet d’adresses & idées d’activités).</p></details>
-    <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p class="muted">Bien sûr : nous vous <strong>rappelons sous 24h</strong>.</p></details>
+      <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p>Vous fournissez le logement ; nous assurons l’opérationnel et la relation voyageurs, avec transparence et <strong>contrat de confiance</strong>.</p></details>
+      <details><summary>Proposez-vous des partenaires ?</summary><p>Oui : <strong>VTC</strong>, <strong>entretien piscine & jardin</strong>, et <strong>guide touristique</strong> (carnet d’adresses & idées d’activités).</p></details>
+      <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p>Bien sûr : nous vous <strong>rappelons sous 24h</strong>.</p></details>
     </div>
   </section>
 
-  <!-- CONTACT (FormSubmit sans ouvrir Mail) -->
+  <!-- CONTACT -->
   <section class="section" id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="contact" style="margin-top:10px">
-        <form id="contactForm" class="card" aria-label="Formulaire de contact">
-          <!-- champs visibles -->
-          <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
-            <input type="text" name="Nom" placeholder="Nom" aria-label="Nom" required />
-            <input type="email" name="Email" placeholder="Email" aria-label="Email" required />
-          </div>
-          <textarea name="Message" placeholder="Votre message" aria-label="Message" style="margin-top:12px" required></textarea>
-          <button class="btn" type="submit" style="margin-top:12px">Envoyer</button>
-
-          <!-- confirmations -->
-          <p id="formOk" class="muted" style="display:none;margin-top:10px">
-            Merci pour votre message 🙏 Nous revenons vers vous sous 24 heures (du lundi au dimanche).
-          </p>
-          <p id="formErr" class="muted" style="display:none;margin-top:10px;color:#ffb4b4">
-            Oups, l’envoi a échoué. Veuillez réessayer dans un instant ou écrivez-nous à
-            <a href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>.
-          </p>
-
-          <!-- champs cachés FormSubmit -->
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="Nouveau message – SYANA Conciergerie" />
-          <input type="hidden" name="_template" value="table" />
-          <!-- Auto-réponse envoyée au visiteur -->
-          <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Nous vous répondrons sous 24 heures. — SYANA Conciergerie, Côte d’Azur" />
-        </form>
-
-        <div class="card" role="group" aria-label="Liens de contact">
-          <a class="cta" href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>
-          <div style="height:10px"></div>
-          <a class="cta" href="tel:+33650992263">06 50 99 22 63</a>
-        </div>
-      </div>
+    <div class="container contact">
+      <a class="cta" href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>
+      <a class="cta" href="tel:+33650992263">06 50 99 22 63</a>
     </div>
   </section>
 
@@ -335,37 +395,10 @@
     const closeDrawer=()=>{drawer.classList.remove('open');drawer.hidden=true;burger.setAttribute('aria-expanded','false');}
     burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());
     drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});
-
-    // ENVOI FORMULAIRE — FormSubmit (sans ouverture de Mail)
-    (function(){
-      const form = document.getElementById('contactForm');
-      const ok = document.getElementById('formOk');
-      const err = document.getElementById('formErr');
-
-      // Endpoint = adresse de réception
-      const ENDPOINT = "https://formsubmit.co/syanaconciergerie@gmail.com";
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        ok.style.display='none'; err.style.display='none';
-
-        const data = new FormData(form);
-        try{
-          const res = await fetch(ENDPOINT, { method:'POST', body:data });
-          if(res.ok){
-            form.reset();
-            ok.style.display='block';
-          }else{
-            err.style.display='block';
-          }
-        }catch{
-          err.style.display='block';
-        }
-      });
-    })();
   </script>
 </body>
 </html>
+
 
 
 
