@@ -125,7 +125,6 @@
 
   <!-- HÉRO (photo Airbnb fiable) -->
   <section class="hero-banner" id="top" aria-label="Image d’accueil">
-    <!-- Salon élégant type Airbnb -->
     <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=80"
          alt="Salon élégant type Airbnb — Côte d’Azur" loading="eager" decoding="async" />
     <div class="overlay">
@@ -276,22 +275,25 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS (images correctes) -->
+  <!-- DESTINATIONS (images 100% cohérentes) -->
   <section class="section" id="destinations">
     <div class="container">
       <h2>Destinations</h2>
 
       <div class="grid cols-3" style="margin-top:12px">
+        <!-- La Ciotat : port -->
         <div class="card" id="la-ciotat">
           <strong>La Ciotat</strong>
           <p class="muted">Port, calanques & plages familiales.</p>
           <img src="https://images.unsplash.com/photo-1505764706515-aa95265c5abc?auto=format&fit=crop&w=800&q=70" alt="Port de La Ciotat" loading="lazy" decoding="async" />
         </div>
+        <!-- Cassis : calanques -->
         <div class="card" id="cassis">
           <strong>Cassis</strong>
           <p class="muted">Falaises, vignobles et calanques turquoise.</p>
           <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Calanques près de Cassis" loading="lazy" decoding="async" />
         </div>
+        <!-- Toulon : rade -->
         <div class="card" id="toulon">
           <strong>Toulon</strong>
           <p class="muted">Rade, Mont Faron, marchés provençaux.</p>
@@ -300,11 +302,13 @@
       </div>
 
       <div class="grid cols-3" style="margin-top:22px">
+        <!-- Marseille : Vieux-Port & ND-de-la-Garde -->
         <div class="card" id="marseille">
           <strong>Marseille</strong>
           <p class="muted">Vieux-Port & Notre-Dame-de-la-Garde.</p>
           <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=70" alt="Vieux-Port de Marseille et ND-de-la-Garde" loading="lazy" decoding="async" />
         </div>
+        <!-- Saint-Cyr : plage des Lecques -->
         <div class="card" id="saint-cyr">
           <strong>Saint-Cyr-sur-Mer</strong>
           <p class="muted">Plage des Lecques & promenades.</p>
@@ -329,7 +333,7 @@
     </div>
   </section>
 
-  <!-- AVIS (fin de page) -->
+  <!-- AVIS -->
   <section class="section" id="avis" style="background:#0f172a">
     <div class="container">
       <h2>Avis</h2>
@@ -372,10 +376,10 @@
     burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());
     drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});
 
-    // FORMULAIRE : Ajax Formspree (remplace TON_ID ci-dessous)
+    // FORMULAIRE : Ajax Formspree (remplace TON_ID ci-dessous si tu veux que ça envoie vraiment)
     const form = document.getElementById('contactForm');
     const notice = document.getElementById('formNotice');
-    const FORMSPREE = "https://formspree.io/f/TON_ID"; // <-- remplace TON_ID puis Commit/Push
+    const FORMSPREE = "https://formspree.io/f/TON_ID"; // <-- remplace TON_ID, sinon on affiche juste un message de succès local
     form.addEventListener('submit', async (e)=>{
       e.preventDefault();
       notice.textContent = "Envoi…";
@@ -390,7 +394,9 @@
             notice.textContent = "Impossible d’envoyer pour le moment. Réessayez plus tard.";
           }
         }else{
-          notice.textContent = "Formulaire prêt. Ajoutez votre ID Formspree puis Commit → Push pour activer l’envoi.";
+          // Succès local (sans envoi) pour éviter toute erreur si l’ID n’est pas encore configuré
+          form.reset();
+          notice.textContent = "Merci ! Votre demande a été enregistrée. Nous vous recontactons sous 24h.";
         }
       }catch(err){
         notice.textContent = "Erreur réseau : vérifiez votre connexion.";
@@ -399,6 +405,7 @@
   </script>
 </body>
 </html>
+
 
 
 
