@@ -12,14 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://syana-bc.fr/" />
-  <meta property="og:title" content="SYANA Conciergerie – Côte d’Azur" />
-  <meta property="og:description" content="Conciergerie haut de gamme : 24/7, optimisation d’annonce, ménage pro, partenaires VTC/piscine/jardin." />
-  <meta property="og:image" content="https://syana-bc.fr/assets/images/logo/syana-logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <!-- Styles (thème sombre pro) -->
   <style>
     :root{
@@ -130,7 +122,7 @@
     </div>
   </header>
 
-  <!-- HÉRO (salon élégant, style précédent) -->
+  <!-- HÉRO (salon élégant, ambiance Airbnb) -->
   <section class="hero-banner" id="top" aria-label="Image d’accueil">
     <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2b8f?auto=format&fit=crop&w=1920&q=80"
          alt="Salon élégant type Airbnb — Côte d’Azur" loading="eager" decoding="async" />
@@ -211,14 +203,14 @@
     </div>
   </section>
 
-  <!-- PARTENAIRES -->
+  <!-- PARTENAIRES (images pertinentes) -->
   <section class="section" id="partenaires">
     <div class="container">
       <h2>Partenaires</h2>
       <div class="grid cols-3" style="margin-top:12px">
         <div class="card"><strong>Chauffeur privé (VTC)</strong>
           <p class="muted">Transferts aéroport/gare, trajets premium.</p>
-          <!-- Berline noire VTC, pas de voiture de sport -->
+          <!-- Berline noire VTC -->
           <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=800&q=70" alt="Berline noire chauffeur VTC" loading="lazy" decoding="async" />
         </div>
         <div class="card"><strong>Entretien piscine</strong>
@@ -283,7 +275,7 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS (visuels cohérents) -->
+  <!-- DESTINATIONS (visuels exacts demandés) -->
   <section class="section" id="destinations">
     <div class="container">
       <h2>Destinations</h2>
@@ -292,11 +284,13 @@
         <div class="card" id="la-ciotat">
           <strong>La Ciotat</strong>
           <p class="muted">Port, calanques & plages familiales.</p>
+          <!-- Port de La Ciotat -->
           <img src="https://images.unsplash.com/photo-1505764706515-aa95265c5abc?auto=format&fit=crop&w=800&q=70" alt="Port de La Ciotat" loading="lazy" decoding="async" />
         </div>
         <div class="card" id="cassis">
           <strong>Cassis</strong>
           <p class="muted">Falaises, vignobles et calanques turquoise.</p>
+          <!-- Calanques de Cassis -->
           <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Calanques près de Cassis" loading="lazy" decoding="async" />
         </div>
         <div class="card" id="toulon">
@@ -309,13 +303,14 @@
       <div class="grid cols-3" style="margin-top:22px">
         <div class="card" id="marseille">
           <strong>Marseille</strong>
-          <p class="muted">Vieux-Port, Panier, Notre-Dame-de-la-Garde.</p>
-          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=70" alt="Vieux-Port / ND-de-la-Garde au loin" loading="lazy" decoding="async" />
+          <p class="muted">Vieux-Port & Notre-Dame-de-la-Garde.</p>
+          <!-- Vieux-Port / ND-de-la-Garde -->
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=70" alt="Vieux-Port de Marseille et ND-de-la-Garde" loading="lazy" decoding="async" />
         </div>
-        <div class="card">
+        <div class="card" id="saint-cyr">
           <strong>Saint-Cyr-sur-Mer</strong>
-          <p class="muted">Lecques, promenades & sports nautiques.</p>
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=70" alt="Plage Saint-Cyr-sur-Mer" loading="lazy" decoding="async" />
+          <p class="muted">Plage des Lecques & promenades.</p>
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=70" alt="Plage à Saint-Cyr-sur-Mer" loading="lazy" decoding="async" />
         </div>
         <div class="card">
           <strong>Guide & activités</strong>
@@ -382,7 +377,7 @@
     // FORMULAIRE : Ajax Formspree (remplace TON_ID ci-dessous)
     const form = document.getElementById('contactForm');
     const notice = document.getElementById('formNotice');
-    const FORMSPREE = "https://formspree.io/f/TON_ID"; // <-- remplace TON_ID + Commit/Push
+    const FORMSPREE = "https://formspree.io/f/TON_ID"; // <-- remplace TON_ID puis Commit/Push
     form.addEventListener('submit', async (e)=>{
       e.preventDefault();
       notice.textContent = "Envoi…";
@@ -406,6 +401,7 @@
   </script>
 </body>
 </html>
+
 
 
 
