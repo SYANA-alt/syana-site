@@ -1,4 +1,4 @@
-<!doctype html>
+l><!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -8,11 +8,9 @@
   <link rel="canonical" href="https://syana-bc.fr/" />
   <link rel="icon" href="/assets/images/logo/syana-logo.png" type="image/png" />
 
-  <!-- Polices -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Styles (thème sombre pro) -->
   <style>
     :root{
       --ink:#e5e7eb; --muted:#9ca3af; --brand:#b28a36; --gold:#eab308;
@@ -123,7 +121,7 @@
     </div>
   </header>
 
-  <!-- HÉRO (photo Airbnb fiable) -->
+  <!-- HÉRO (laisse l'image actuelle du salon/airbnb) -->
   <section class="hero-banner" id="top" aria-label="Image d’accueil">
     <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=80"
          alt="Salon élégant type Airbnb — Côte d’Azur" loading="eager" decoding="async" />
@@ -204,22 +202,23 @@
     </div>
   </section>
 
-  <!-- PARTENAIRES (images pertinentes) -->
+  <!-- PARTENAIRES (corrigé : VTC citadine, piscine, jardinage) -->
   <section class="section" id="partenaires">
     <div class="container">
       <h2>Partenaires</h2>
       <div class="grid cols-3" style="margin-top:12px">
         <div class="card"><strong>Chauffeur privé (VTC)</strong>
           <p class="muted">Transferts aéroport/gare, trajets premium.</p>
-          <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=800&q=70" alt="Berline noire chauffeur VTC" loading="lazy" decoding="async" />
+          <!-- Berline/citadine noire, pas sport -->
+          <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=70" alt="Berline noire type VTC" loading="lazy" decoding="async" />
         </div>
         <div class="card"><strong>Entretien piscine</strong>
           <p class="muted">Suivi régulier, analyse de l’eau, mise en route.</p>
-          <img src="https://images.unsplash.com/photo-1544989164-31dc3c645987?auto=format&fit=crop&w=800&q=70" alt="Entretien de piscine" loading="lazy" decoding="async" />
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=70" alt="Piscine bleue entretenue" loading="lazy" decoding="async" />
         </div>
         <div class="card"><strong>Entretien jardin</strong>
-          <p class="muted">Tonte, taille, arrosage — extérieurs impeccables.</p>
-          <img src="https://images.unsplash.com/photo-1463436755683-3f805a9d1192?auto=format&fit=crop&w=800&q=70" alt="Taille de buissons au sécateur" loading="lazy" decoding="async" />
+          <p class="muted">Taille de buissons & finitions impeccables.</p>
+          <img src="https://images.unsplash.com/photo-1557425493-4b7cf1d7bd15?auto=format&fit=crop&w=800&q=70" alt="Sécateur taillant un buisson" loading="lazy" decoding="async" />
         </div>
       </div>
       <div class="card" style="margin-top:16px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center">
@@ -232,7 +231,7 @@
     </div>
   </section>
 
-  <!-- GALERIE (milieu corrigé) -->
+  <!-- GALERIE (inchangée, milieu OK) -->
   <section class="section" id="galerie">
     <div class="container">
       <h2>Galerie</h2>
@@ -275,7 +274,7 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS (images 100% cohérentes) -->
+  <!-- DESTINATIONS (photos cohérentes par ville) -->
   <section class="section" id="destinations">
     <div class="container">
       <h2>Destinations</h2>
@@ -293,7 +292,7 @@
           <p class="muted">Falaises, vignobles et calanques turquoise.</p>
           <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Calanques près de Cassis" loading="lazy" decoding="async" />
         </div>
-        <!-- Toulon : rade -->
+        <!-- Toulon : rade / mer -->
         <div class="card" id="toulon">
           <strong>Toulon</strong>
           <p class="muted">Rade, Mont Faron, marchés provençaux.</p>
@@ -302,7 +301,7 @@
       </div>
 
       <div class="grid cols-3" style="margin-top:22px">
-        <!-- Marseille : Vieux-Port & ND-de-la-Garde -->
+        <!-- Marseille : Vieux-Port / ND-de-la-Garde -->
         <div class="card" id="marseille">
           <strong>Marseille</strong>
           <p class="muted">Vieux-Port & Notre-Dame-de-la-Garde.</p>
@@ -365,10 +364,8 @@
   </footer>
 
   <script>
-    // Année dynamique
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Menu mobile
     const burger=document.getElementById('burger');
     const drawer=document.getElementById('drawer');
     const openDrawer=()=>{drawer.hidden=false;drawer.classList.add('open');burger.setAttribute('aria-expanded','true');}
@@ -376,10 +373,10 @@
     burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());
     drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});
 
-    // FORMULAIRE : Ajax Formspree (remplace TON_ID ci-dessous si tu veux que ça envoie vraiment)
+    // Formspree (ajoute ton ID quand tu l'auras)
     const form = document.getElementById('contactForm');
     const notice = document.getElementById('formNotice');
-    const FORMSPREE = "https://formspree.io/f/TON_ID"; // <-- remplace TON_ID, sinon on affiche juste un message de succès local
+    const FORMSPREE = "https://formspree.io/f/TON_ID";
     form.addEventListener('submit', async (e)=>{
       e.preventDefault();
       notice.textContent = "Envoi…";
@@ -387,24 +384,18 @@
         const data = Object.fromEntries(new FormData(form).entries());
         if(!FORMSPREE.includes('/f/TON_ID')){
           const r = await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-          if(r.ok){
-            form.reset();
-            notice.textContent = "Merci ! Votre demande a bien été envoyée. Nous revenons vers vous sous 24h.";
-          }else{
-            notice.textContent = "Impossible d’envoyer pour le moment. Réessayez plus tard.";
-          }
+          if(r.ok){ form.reset(); notice.textContent="Merci ! Votre demande a bien été envoyée. Nous revenons vers vous sous 24h."; }
+          else { notice.textContent="Impossible d’envoyer pour le moment. Réessayez plus tard."; }
         }else{
-          // Succès local (sans envoi) pour éviter toute erreur si l’ID n’est pas encore configuré
           form.reset();
-          notice.textContent = "Merci ! Votre demande a été enregistrée. Nous vous recontactons sous 24h.";
+          notice.textContent="Merci ! Votre demande a été enregistrée. Nous vous recontactons sous 24h.";
         }
-      }catch(err){
-        notice.textContent = "Erreur réseau : vérifiez votre connexion.";
-      }
+      }catch{ notice.textContent="Erreur réseau : vérifiez votre connexion."; }
     });
   </script>
 </body>
 </html>
+
 
 
 
