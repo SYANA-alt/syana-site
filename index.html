@@ -1,4 +1,4 @@
-l><!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -8,9 +8,11 @@ l><!doctype html>
   <link rel="canonical" href="https://syana-bc.fr/" />
   <link rel="icon" href="/assets/images/logo/syana-logo.png" type="image/png" />
 
+  <!-- Polices -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- Styles (thème sombre pro) -->
   <style>
     :root{
       --ink:#e5e7eb; --muted:#9ca3af; --brand:#b28a36; --gold:#eab308;
@@ -121,7 +123,7 @@ l><!doctype html>
     </div>
   </header>
 
-  <!-- HÉRO (laisse l'image actuelle du salon/airbnb) -->
+  <!-- HÉRO (image salon/airbnb inchangée) -->
   <section class="hero-banner" id="top" aria-label="Image d’accueil">
     <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1920&q=80"
          alt="Salon élégant type Airbnb — Côte d’Azur" loading="eager" decoding="async" />
@@ -231,7 +233,7 @@ l><!doctype html>
     </div>
   </section>
 
-  <!-- GALERIE (inchangée, milieu OK) -->
+  <!-- GALERIE (inchangée) -->
   <section class="section" id="galerie">
     <div class="container">
       <h2>Galerie</h2>
@@ -292,11 +294,11 @@ l><!doctype html>
           <p class="muted">Falaises, vignobles et calanques turquoise.</p>
           <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" alt="Calanques près de Cassis" loading="lazy" decoding="async" />
         </div>
-        <!-- Toulon : rade / mer -->
+        <!-- Toulon : rade / plage -->
         <div class="card" id="toulon">
           <strong>Toulon</strong>
           <p class="muted">Rade, Mont Faron, marchés provençaux.</p>
-          <img src="https://images.unsplash.com/photo-1544551763-7ef4200b2507?auto=format&fit=crop&w=800&q=70" alt="Rade de Toulon" loading="lazy" decoding="async" />
+          <img src="https://images.unsplash.com/photo-1544551763-7ef4200b2507?auto=format&fit=crop&w=800&q=70" alt="Plage et rade de Toulon" loading="lazy" decoding="async" />
         </div>
       </div>
 
@@ -364,8 +366,10 @@ l><!doctype html>
   </footer>
 
   <script>
+    // Année dynamique
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Menu mobile
     const burger=document.getElementById('burger');
     const drawer=document.getElementById('drawer');
     const openDrawer=()=>{drawer.hidden=false;drawer.classList.add('open');burger.setAttribute('aria-expanded','true');}
@@ -395,6 +399,7 @@ l><!doctype html>
   </script>
 </body>
 </html>
+
 
 
 
