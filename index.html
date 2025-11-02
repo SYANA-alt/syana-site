@@ -4,50 +4,57 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SYANA Conciergerie – Côte d’Azur</title>
-  <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Cassis, Saint-Cyr-sur-Mer et Toulon : accueil 24/7, check-in/out, réapprovisionnement, suivi des évaluations, partenaires, guide touristique.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Conciergerie haut de gamme à La Ciotat, Cassis, Saint-Cyr-sur-Mer & Toulon : 24/7, check-in/out, réapprovisionnement, suivi des évaluations, partenaires VTC, piscine & jardin, rappel sous 24h." />
+
+  <!-- Polices -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --ink:#e5e7eb; --muted:#9ca3af; --brand:#f59e0b; --gold:#f4c76c;
-      --bg:#0b0f1a; --bg-soft:#101728; --ring:rgba(255,255,255,.08);
-      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --ink:#e5e7eb; --muted:#9ca3af; --brand:#f59e0b; --gold:#ffcc66;
+      --bg:#0b0f17; --bg-soft:#121827; --ring:rgba(255,255,255,.08);
+      --radius:18px; --shadow:0 10px 30px rgba(2,6,23,.35);
     }
     *{box-sizing:border-box}
     html,body{margin:0}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
     img{max-width:100%;display:block}
 
+    /* Neutralisation d'anciens styles éventuels */
+    .card:before,.card:after,.gallery:before,.gallery:after{content:none!important}
+    .card img{filter:none!important;mix-blend-mode:normal!important;opacity:1!important}
+
     .container{width:min(1120px,92%);margin-inline:auto}
-    h1{font:700 clamp(28px,5vw,48px)/1.12 "Playfair Display",serif;margin:.35em 0 .3em}
-    h2{font:700 28px "Playfair Display",serif;margin:0 0 14px}
+    h1{font:700 clamp(28px,5vw,48px)/1.12 "Playfair Display",serif;margin:.35em 0 .3em;color:#fff}
+    h2{font:700 28px "Playfair Display",serif;margin:0 0 14px;color:#fff}
     .section{padding:56px 0}
     .muted{color:var(--muted)}
-    .badge{display:inline-block;padding:6px 10px;background:var(--bg-soft);border-radius:999px;border:1px solid var(--ring);font-weight:600}
+    .badge{display:inline-block;padding:6px 10px;background:var(--bg-soft);border-radius:999px;border:1px solid var(--ring);font-weight:600;color:#d1d5db}
 
     /* Header/Nav */
-    header{position:sticky;top:0;z-index:50;background:rgba(10,14,25,.86);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--ring)}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,23,.75);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--ring)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
     .brand img{height:56px;width:auto}
     .brand .word{display:flex;flex-direction:column}
-    .brand .word strong{font:700 22px/1 "Playfair Display",serif;letter-spacing:.3px}
+    .brand .word strong{font:700 22px/1 "Playfair Display",serif;letter-spacing:.3px;color:#fff}
     .brand .word span{font:500 12px/1.1 Inter,system-ui;color:var(--muted)}
     .menu{display:flex;align-items:center;gap:20px}
-    .menu a{text-decoration:none;color:var(--ink);font-weight:500;padding:8px 10px;border-radius:10px}
-    .menu a:hover{background:var(--bg-soft)}
-    .cta{background:var(--brand);color:#111827;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:var(--shadow)}
+    .menu a{text-decoration:none;color:#e5e7eb;font-weight:500;padding:8px 10px;border-radius:10px}
+    .menu a:hover{background:rgba(255,255,255,.06)}
+    .cta{background:var(--brand);color:#111827;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:var(--shadow)}
     .cta:hover{filter:brightness(1.05)}
-    .burger{display:none;width:44px;height:44px;border:1px solid var(--ring);border-radius:12px;background:transparent;align-items:center;justify-content:center;color:var(--ink)}
-    .burger span{width:20px;height:2px;background:var(--ink);position:relative;display:block}
-    .burger span:before,.burger span:after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--ink)}
+
+    .burger{display:none;width:44px;height:44px;border:1px solid var(--ring);border-radius:12px;background:#0b0f17;align-items:center;justify-content:center}
+    .burger span{width:20px;height:2px;background:#e5e7eb;position:relative;display:block}
+    .burger span:before,.burger span:after{content:"";position:absolute;left:0;right:0;height:2px;background:#e5e7eb}
     .burger span:before{top:-6px}.burger span:after{top:6px}
     @media (max-width:920px){.menu{display:none}.burger{display:flex}}
     .drawer{display:none}
     .drawer.open{display:block}
     @media (max-width:920px){
-      .drawer{position:fixed;inset:64px 0 auto 0;background:#0b1020;border-top:1px solid var(--ring)}
+      .drawer{position:fixed;inset:64px 0 auto 0;background:#0b0f17;border-top:1px solid var(--ring)}
       .drawer .menu{display:flex;flex-direction:column;padding:12px 16px;gap:6px}
       .drawer .menu a{padding:12px 10px}
       .drawer .cta{display:inline-block;margin:8px 10px 16px}
@@ -58,21 +65,16 @@
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
     @media (max-width:920px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
-    .card{border:1px solid var(--ring);border-radius:var(--radius);background:var(--bg-soft);padding:18px;box-shadow:var(--shadow)}
+    .card{border:1px solid var(--ring);border-radius:var(--radius);background:#0f1626;padding:18px;box-shadow:var(--shadow)}
     .price{font:700 28px/1 "Playfair Display",serif;color:var(--gold)}
 
-    /* Hero avec image de fond */
-    .hero{padding:0}
-    .hero-wrap{
-      min-height:520px;display:grid;align-items:center;
-      background:url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
-      position:relative;
-    }
-    .hero-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,15,26,.55),rgba(11,15,26,.85))}
-    .hero-inner{position:relative;padding:72px 0;z-index:1}
-    .eyebrow{color:#d1d5db;letter-spacing:.18em;text-transform:uppercase;font-weight:600;font-size:12px}
-    .hero-inner h1{margin:.35em 0 .3em}
-    .hero-card{margin-top:18px}
+    /* Hero */
+    .hero{padding:56px 0 28px}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+    @media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
+    .eyebrow{color:var(--muted);letter-spacing:.18em;text-transform:uppercase;font-weight:600;font-size:12px}
+    .hero-card ul{margin:0;padding-left:18px}
+    .hero-card li{margin:.35em 0}
 
     /* Galerie */
     .gallery{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
@@ -80,20 +82,17 @@
     @media (max-width:920px){.gallery{grid-template-columns:1fr}.gallery img{height:220px}}
 
     /* Avis (étoiles) */
-    .stars{color:#facc15;font-size:20px;letter-spacing:2px}
+    .stars{color:#fbbf24;font-size:20px;letter-spacing:2px}
     .quote{margin:.5em 0 0;color:#d1d5db}
 
-    /* Destinations & partenaires : textes only */
-    .row{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-    @media (max-width:920px){.row{grid-template-columns:1fr}}
-
-    /* Contact */
+    /* Contact/Footer */
     .contact{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    form{display:grid;gap:12px}
-    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--ring);background:#0e1424;color:var(--ink)}
-    textarea{min-height:120px;resize:vertical}
-    button[type=submit]{background:var(--brand);color:#111827;border:0;padding:12px 16px;border-radius:12px;font-weight:700}
     footer{padding:28px 0;border-top:1px solid var(--ring);color:var(--muted);font-size:14px}
+
+    /* === Fix header spacing demandé === */
+    .nav { gap: 24px; }
+    .brand { padding-right: 14px; }
+    .menu { gap: 24px; }
   </style>
 </head>
 <body>
@@ -102,9 +101,11 @@
   <header>
     <div class="container nav" role="navigation" aria-label="Navigation principale">
       <a class="brand" href="#top" aria-label="Accueil">
-        <img src="assets/images/logo/syana-logo.png" alt="Logo SYANA Conciergerie" width="220" height="auto" loading="eager" decoding="async" />
+        <!-- Logo : laisse le chemin tel quel si ton fichier est assets/images/logo/syana-logo.png -->
+        <img src="/assets/images/logo/syana-logo.png" alt="Logo SYANA Conciergerie" width="220" height="auto" loading="eager" decoding="async" />
         <span class="word"><strong>SYANA</strong><span>Conciergerie</span></span>
       </a>
+
       <nav class="menu" aria-label="Liens">
         <a href="#services">Services</a>
         <a href="#offres">Offres</a>
@@ -115,8 +116,10 @@
         <a href="#faq">FAQ</a>
         <a class="cta" href="#contact">Contact</a>
       </nav>
+
       <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-controls="drawer" aria-expanded="false"><span></span></button>
     </div>
+
     <div id="drawer" class="drawer" hidden>
       <nav class="menu" aria-label="Menu mobile">
         <a href="#services">Services</a>
@@ -133,11 +136,20 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero-wrap">
-      <div class="container hero-inner">
+    <div class="container wrap">
+      <div>
         <div class="eyebrow">Conciergerie haut de gamme</div>
         <h1>SYANA Conciergerie – l’élégance au service de vos séjours d’exception</h1>
         <p class="muted">Basés à La Ciotat, nous accompagnons les propriétaires avec un service transparent, fiable et raffiné : <strong>5 ans d’expérience</strong>, gestion soignée, et séjours mémorables pour vos hôtes.</p>
+      </div>
+      <div class="card hero-card">
+        <h3 style="margin:0 0 8px;color:#fff">Points clés</h3>
+        <ul>
+          <li>Service téléphonique <strong>24/7</strong> & check-in/check-out <strong>24/7</strong></li>
+          <li><strong>Réapprovisionnement</strong> des consommables</li>
+          <li><strong>Suivi des évaluations</strong> par vos hôtes</li>
+          <li><strong>Rappel sous 24h</strong> – sérénité via contrat de confiance</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -149,17 +161,17 @@
       <div class="grid cols-3" style="margin-top:16px">
         <div class="card">
           <div class="badge">Séjours d’exception</div>
-          <h3>Accueil & expérience</h3>
+          <h3 style="color:#fff">Accueil & expérience</h3>
           <p>Check-in soigné, guide d’accueil, recommandations locales triées (plages, restaurants, balades). Disponibilité & réactivité pour des avis 5★.</p>
         </div>
         <div class="card">
           <div class="badge">Mise en valeur</div>
-          <h3>Photos & annonces</h3>
+          <h3 style="color:#fff">Photos & annonces</h3>
           <p>Création d’annonce, <strong>photographe</strong> de votre logement, optimisation titres & descriptions, gestion calendrier & tarification.</p>
         </div>
         <div class="card">
           <div class="badge">Clé en main</div>
-          <h3>Gestion opérationnelle</h3>
+          <h3 style="color:#fff">Gestion opérationnelle</h3>
           <p>Ménage pro, petites maintenances, linge/consommables selon l’offre. Suivi des évaluations et rappels rapides.</p>
         </div>
       </div>
@@ -172,7 +184,7 @@
       <h2>Nos offres simples et transparentes</h2>
       <div class="grid cols-2" style="margin-top:12px">
         <div class="card">
-          <h3>Standard</h3>
+          <h3 style="color:#fff">Standard</h3>
           <p class="price">18%</p>
           <ul>
             <li>Création & optimisation d’annonce</li>
@@ -182,7 +194,7 @@
           </ul>
         </div>
         <div class="card">
-          <h3>Gold</h3>
+          <h3 style="color:#fff">Gold</h3>
           <p class="price">20%</p>
           <ul>
             <li>Tout ce de l’offre Standard</li>
@@ -195,17 +207,17 @@
     </div>
   </section>
 
-  <!-- PARTENAIRES (texte seul) -->
+  <!-- PARTENAIRES -->
   <section class="section" id="partenaires">
     <div class="container">
       <h2>Partenaires</h2>
-      <div class="row" style="margin-top:12px">
-        <div class="card"><strong>Chauffeur privé (VTC)</strong><p class="muted">Transferts aéroport/gare, trajets premium pour vos hôtes.</p></div>
-        <div class="card"><strong>Entretien piscine</strong><p class="muted">Suivi régulier, analyse de l’eau, mise en route saisonnière.</p></div>
-        <div class="card"><strong>Entretien jardin</strong><p class="muted">Taille, tonte, arrosage — extérieurs impeccables.</p></div>
+      <div class="grid cols-3" style="margin-top:12px">
+        <div class="card"><strong style="color:#fff">Chauffeur privé (VTC)</strong><p class="muted">Transferts aéroport/gare, trajets premium pour vos hôtes.</p></div>
+        <div class="card"><strong style="color:#fff">Entretien piscine</strong><p class="muted">Suivi régulier, analyse de l’eau, mise en route saisonnière.</p></div>
+        <div class="card"><strong style="color:#fff">Entretien jardin</strong><p class="muted">Tonte, taille, arrosage — extérieurs impeccables.</p></div>
       </div>
       <div class="card" style="margin-top:16px">
-        <strong>Guide touristique (dans chaque appartement)</strong>
+        <strong style="color:#fff">Guide touristique (dans chaque appartement)</strong>
         <p class="muted">Carnet d’adresses & activités : plages, calanques, restaurants, marchés, sorties, bien-être.</p>
       </div>
     </div>
@@ -217,7 +229,8 @@
       <h2>Galerie</h2>
       <div class="gallery" style="margin-top:12px">
         <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80" alt="Salon lumineux – SYANA Conciergerie" loading="lazy" decoding="async">
-        <img src="https://images.unsplash.com/photo-1600607687920-4ce1b2153a1f?auto=format&fit=crop&w=1600&q=80" alt="Suite élégante – SYANA Conciergerie" loading="lazy" decoding="async">
+        <!-- === Image du MILIEU remplacée (fix) === -->
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1600&q=80" alt="Chambre élégante – SYANA Conciergerie" loading="lazy" decoding="async">
         <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1600&q=80" alt="Terrasse ensoleillée – SYANA Conciergerie" loading="lazy" decoding="async">
       </div>
     </div>
@@ -244,50 +257,33 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS (texte seul) -->
+  <!-- DESTINATIONS -->
   <section class="section" id="destinations">
     <div class="container">
       <h2>Destinations</h2>
-      <div class="row" style="margin-top:12px">
-        <div class="card"><strong>La Ciotat</strong><p class="muted">Port, calanques et plages familiales.</p></div>
-        <div class="card"><strong>Cassis</strong><p class="muted">Falaises, vignobles et criques turquoise.</p></div>
-        <div class="card"><strong>Saint-Cyr-sur-Mer</strong><p class="muted">Lecques, promenades & sports nautiques.</p></div>
-        <div class="card"><strong>Toulon</strong><p class="muted">Mont Faron, rade & plages de sable.</p></div>
-        <div class="card"><strong>Marseille</strong><p class="muted">Vieux-Port, Notre-Dame-de-la-Garde, marchés & criques.</p></div>
+      <div class="grid cols-3" style="margin-top:12px">
+        <div class="card"><strong style="color:#fff">La Ciotat</strong><p class="muted">Calanques, port et plages familiales.</p></div>
+        <div class="card"><strong style="color:#fff">Cassis</strong><p class="muted">Falaises, vignobles et criques turquoise.</p></div>
+        <div class="card"><strong style="color:#fff">Saint-Cyr-sur-Mer</strong><p class="muted">Lecques, promenades & sports nautiques.</p></div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="section" id="faq" style="background:var(--bg-soft)">
     <div class="container">
       <h2>FAQ</h2>
-      <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p>Vous fournissez le logement ; nous assurons l’opérationnel et la relation voyageurs, avec transparence et <strong>contrat de confiance</strong>.</p></details>
-      <details><summary>Proposez-vous des partenaires ?</summary><p>Oui : VTC, entretien piscine & jardin, et guide touristique (carnet d’adresses & idées d’activités).</p></details>
-      <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p>Bien sûr : nous vous <strong>rappelons sous 24h</strong>.</p></details>
+      <details><summary>Comment fonctionne la formule à 18% / 20% ?</summary><p class="muted">Vous fournissez le logement ; nous assurons l’opérationnel et la relation voyageurs, avec transparence et <strong>contrat de confiance</strong>.</p></details>
+      <details><summary>Proposez-vous des partenaires ?</summary><p class="muted">Oui : <strong>VTC</strong>, <strong>entretien piscine & jardin</strong>, et <strong>guide touristique</strong> (carnet d’adresses & idées d’activités).</p></details>
+      <details><summary>Puis-je être rappelé(e) rapidement ?</summary><p class="muted">Bien sûr : nous vous <strong>rappelons sous 24h</strong>.</p></details>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section" id="contact" style="background:var(--bg-soft)">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="grid cols-2" style="margin-top:12px">
-        <div class="card">
-          <form id="contactForm">
-            <input type="text" name="name" placeholder="Votre nom" required>
-            <input type="email" name="email" placeholder="Votre e-mail" required>
-            <textarea name="message" placeholder="Votre message" required></textarea>
-            <button type="submit">Envoyer</button>
-            <p id="status" class="muted" aria-live="polite"></p>
-          </form>
-        </div>
-        <div class="card">
-          <p><strong>E-mail</strong> : <a href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a></p>
-          <p><strong>Téléphone</strong> : <a href="tel:+33650992263">06 50 99 22 63</a></p>
-          <p class="muted">Réponse sous 24h.</p>
-        </div>
-      </div>
+  <section class="section" id="contact">
+    <div class="container contact">
+      <a class="cta" href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>
+      <a class="cta" href="tel:+33650992263">06 50 99 22 63</a>
     </div>
   </section>
 
@@ -309,25 +305,10 @@
     const closeDrawer=()=>{drawer.classList.remove('open');drawer.hidden=true;burger.setAttribute('aria-expanded','false');}
     burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());
     drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});
-
-    // Formulaire : fallback mailto (sans service externe)
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('status');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const data = new FormData(form);
-      const name = encodeURIComponent(data.get('name'));
-      const email = encodeURIComponent(data.get('email'));
-      const message = encodeURIComponent(data.get('message'));
-      const subject = encodeURIComponent('Demande via syana-bc.fr');
-      const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\n${message}`);
-      window.location.href = `mailto:syanaconciergerie@gmail.com?subject=${subject}&body=${body}`;
-      status.textContent = "Message prêt dans votre client e-mail.";
-      form.reset();
-    });
   </script>
 </body>
 </html>
+
 
 
 
