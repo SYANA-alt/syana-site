@@ -79,8 +79,17 @@
     .stars{color:#fbbf24;font-size:20px;letter-spacing:2px}
     .quote{margin:.5em 0 0;color:#d1d5db}
 
-    /* Contact/Footer */
+    /* Contact */
     .contact{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    form.contact-form{display:grid;gap:12px}
+    .field{display:grid;gap:8px}
+    .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:720px){.two-cols{grid-template-columns:1fr}}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--ring);background:#0e1424;color:#e5e7eb}
+    textarea{min-height:120px;resize:vertical}
+    button[type=submit]{background:var(--brand);color:#111827;border:0;padding:12px 16px;border-radius:12px;font-weight:700}
+    #status{font-size:14px;color:var(--muted);margin-top:4px}
+
     footer{padding:28px 0;border-top:1px solid var(--ring);color:var(--muted);font-size:14px}
   </style>
 </head>
@@ -134,7 +143,7 @@
     </div>
   </section>
 
-  <!-- SERVICES (inchangé) -->
+  <!-- SERVICES -->
   <section class="section" id="services">
     <div class="container">
       <h2>Nos services</h2>
@@ -158,7 +167,7 @@
     </div>
   </section>
 
-  <!-- OFFRES (inchangé) -->
+  <!-- OFFRES -->
   <section class="section" id="offres" style="background:var(--bg-soft)">
     <div class="container">
       <h2>Nos offres simples et transparentes</h2>
@@ -187,7 +196,7 @@
     </div>
   </section>
 
-  <!-- PARTENAIRES (texte seul, inchangé) -->
+  <!-- PARTENAIRES (texte seul) -->
   <section class="section" id="partenaires">
     <div class="container">
       <h2>Partenaires</h2>
@@ -203,7 +212,7 @@
     </div>
   </section>
 
-  <!-- GALERIE (image du MILIEU réparée) -->
+  <!-- GALERIE -->
   <section class="section" id="galerie">
     <div class="container">
       <h2>Galerie</h2>
@@ -215,7 +224,7 @@
     </div>
   </section>
 
-  <!-- AVIS (inchangé) -->
+  <!-- AVIS -->
   <section class="section" id="avis" style="background:var(--bg-soft)">
     <div class="container">
       <h2>Avis</h2>
@@ -236,19 +245,22 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS (texte seul, inchangé) -->
+  <!-- DESTINATIONS (texte seul) -->
   <section class="section" id="destinations">
     <div class="container">
       <h2>Destinations</h2>
-      <div class="grid cols-3" style="margin-top:12px">
+    <div class="grid cols-3" style="margin-top:12px">
         <div class="card"><strong style="color:#fff">La Ciotat</strong><p class="muted">Calanques, port et plages familiales.</p></div>
         <div class="card"><strong style="color:#fff">Cassis</strong><p class="muted">Falaises, vignobles et criques turquoise.</p></div>
         <div class="card"><strong style="color:#fff">Saint-Cyr-sur-Mer</strong><p class="muted">Lecques, promenades & sports nautiques.</p></div>
+        <!-- NOUVELLES VILLES -->
+        <div class="card"><strong style="color:#fff">Toulon</strong><p class="muted">Mont Faron, rade & plages de sable.</p></div>
+        <div class="card"><strong style="color:#fff">Marseille</strong><p class="muted">Vieux-Port, Notre-Dame-de-la-Garde & marchés.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ (inchangé) -->
+  <!-- FAQ -->
   <section class="section" id="faq" style="background:var(--bg-soft)">
     <div class="container">
       <h2>FAQ</h2>
@@ -258,11 +270,29 @@
     </div>
   </section>
 
-  <!-- CONTACT (inchangé) -->
+  <!-- CONTACT (formulaire ajouté) -->
   <section class="section" id="contact">
-    <div class="container contact">
-      <a class="cta" href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a>
-      <a class="cta" href="tel:+33650992263">06 50 99 22 63</a>
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="grid cols-2" style="margin-top:12px">
+        <div class="card">
+          <form id="contactForm" class="contact-form">
+            <div class="two-cols">
+              <div class="field"><label for="name" class="muted">Nom</label><input id="name" name="name" type="text" placeholder="Votre nom" required></div>
+              <div class="field"><label for="email" class="muted">E-mail</label><input id="email" name="email" type="email" placeholder="Votre e-mail" required></div>
+            </div>
+            <div class="field"><label for="phone" class="muted">Téléphone (facultatif)</label><input id="phone" name="phone" type="tel" placeholder="06 12 34 56 78"></div>
+            <div class="field"><label for="message" class="muted">Message</label><textarea id="message" name="message" placeholder="Votre message..." required></textarea></div>
+            <button type="submit">Envoyer</button>
+            <p id="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="card">
+          <p><strong>E-mail</strong> : <a href="mailto:syanaconciergerie@gmail.com">syanaconciergerie@gmail.com</a></p>
+          <p><strong>Téléphone</strong> : <a href="tel:+33650992263">06 50 99 22 63</a></p>
+          <p class="muted">Réponse sous 24h.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -284,9 +314,29 @@
     const closeDrawer=()=>{drawer.classList.remove('open');drawer.hidden=true;burger.setAttribute('aria-expanded','false');}
     burger.addEventListener('click',()=>burger.getAttribute('aria-expanded')==='true'?closeDrawer():openDrawer());
     drawer.addEventListener('click',e=>{if(e.target.tagName==='A') closeDrawer();});
+
+    // Formulaire : envoi via mailto (gratuit, sans service externe)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('status');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = data.get('name') || '';
+      const email = data.get('email') || '';
+      const phone = data.get('phone') || '';
+      const message = data.get('message') || '';
+      const subject = encodeURIComponent('Demande via syana-bc.fr');
+      const body = encodeURIComponent(
+        `Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\n${message}\n\n— Envoyé depuis syana-bc.fr`
+      );
+      window.location.href = `mailto:syanaconciergerie@gmail.com?subject=${subject}&body=${body}`;
+      status.textContent = "Merci ! Votre e-mail est prêt dans votre application de messagerie.";
+      form.reset();
+    });
   </script>
 </body>
 </html>
+
 
 
 
